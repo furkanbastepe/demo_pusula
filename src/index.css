@@ -3166,3 +3166,341 @@ input[type="range"]::-moz-range-thumb {
     padding: 1.5rem;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   WARMUPLAB (KODLA KONTROL ET) UI/UX PRO MAX
+   ═══════════════════════════════════════════════════════════ */
+.lab-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .lab-showcase {
+    flex-direction: row;
+    height: 500px;
+  }
+
+  .lab-showcase>* {
+    flex: 1;
+  }
+
+  .traffic-controls {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.lab-scene-container {
+  position: relative;
+  background: #050a14;
+  border-radius: 20px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  overflow: hidden;
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(56, 189, 248, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.lab-scene-environment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.lab-grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transform: perspective(1000px) rotateX(60deg) scale(2);
+  transform-origin: bottom;
+  opacity: 0.5;
+}
+
+.lab-ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  filter: blur(80px);
+  opacity: 0.15;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.lab-ambient-glow.glow-kırmızı {
+  background: #ef4444;
+  opacity: 0.2;
+}
+
+.lab-ambient-glow.glow-sarı {
+  background: #f59e0b;
+  opacity: 0.2;
+}
+
+.lab-ambient-glow.glow-yeşil {
+  background: #10b981;
+  opacity: 0.3;
+}
+
+/* ── Premium Traffic Light ── */
+.premium-traffic-light {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), inset 0 2px 5px rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10;
+}
+
+.premium-traffic-light::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 100vh;
+  background: linear-gradient(90deg, #334155, #0f172a, #334155);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: -1;
+}
+
+.premium-bulb {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #000;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.9);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid #1e293b;
+}
+
+.premium-bulb.red.on {
+  background: #ef4444;
+  box-shadow: 0 0 35px #ef4444, inset 0 0 20px #fca5a5;
+  border-color: #ef4444;
+  transform: scale(1.05);
+}
+
+.premium-bulb.yellow.on {
+  background: #f59e0b;
+  box-shadow: 0 0 35px #f59e0b, inset 0 0 20px #fde68a;
+  border-color: #f59e0b;
+  transform: scale(1.05);
+}
+
+.premium-bulb.green.on {
+  background: #10b981;
+  box-shadow: 0 0 35px #10b981, inset 0 0 20px #6ee7b7;
+  border-color: #10b981;
+  transform: scale(1.05);
+}
+
+.bulb-glare {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  width: 45%;
+  height: 45%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.bulb-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.premium-bulb.on .bulb-label {
+  opacity: 1;
+}
+
+/* ── Premium Road ── */
+.premium-road {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.05) 5%, rgba(56, 189, 248, 0.15));
+  border-top: 1px solid rgba(56, 189, 248, 0.3);
+  z-index: 2;
+  box-shadow: 0 -20px 40px rgba(56, 189, 248, 0.05);
+}
+
+.road-stripes {
+  position: absolute;
+  top: 55%;
+  left: 0;
+  width: 200%;
+  height: 4px;
+  background: repeating-linear-gradient(90deg,
+      var(--accent-amber) 0,
+      var(--accent-amber) 80px,
+      transparent 80px,
+      transparent 160px);
+  opacity: 0.5;
+  filter: drop-shadow(0 0 5px var(--accent-amber));
+}
+
+.road-finish-line {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  width: 8px;
+  height: 100%;
+  background: var(--accent-emerald);
+  box-shadow: 0 0 20px var(--accent-emerald);
+  opacity: 0.8;
+}
+
+/* ── Premium Car ── */
+.premium-car {
+  position: absolute;
+  bottom: 25px;
+  left: -20px;
+  z-index: 5;
+  filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.8));
+}
+
+.car-underglow {
+  position: absolute;
+  bottom: -5px;
+  left: 10%;
+  width: 80%;
+  height: 10px;
+  border-radius: 50%;
+  filter: blur(15px);
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.car-underglow.glow-kırmızı {
+  background: #ef4444;
+}
+
+.car-underglow.glow-sarı {
+  background: #f59e0b;
+}
+
+.car-underglow.glow-yeşil {
+  background: #10b981;
+}
+
+.wheel-spin {
+  transform-origin: 55px 55px;
+  /* Adjust according to SVG cx/cy */
+}
+
+circle[cx="165"] {
+  transform-origin: 165px 55px;
+}
+
+.wheel-spin {
+  animation: wheelSpin 0.5s linear infinite;
+}
+
+@keyframes wheelSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.speed-lines span {
+  position: absolute;
+  height: 2px;
+  background: var(--accent-cyan);
+  border-radius: 2px;
+  opacity: 0;
+  animation: speedLine 0.5s linear infinite;
+}
+
+.speed-lines span:nth-child(1) {
+  top: 30px;
+  left: -80px;
+  width: 60px;
+  animation-delay: 0s;
+}
+
+.speed-lines span:nth-child(2) {
+  top: 45px;
+  left: -120px;
+  width: 100px;
+  animation-delay: 0.2s;
+  opacity: 0.5;
+}
+
+.speed-lines span:nth-child(3) {
+  top: 55px;
+  left: -60px;
+  width: 40px;
+  animation-delay: 0.4s;
+}
+
+@keyframes speedLine {
+  0% {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+.car-speed-hud {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.6);
+  padding: 6px 16px;
+  border-radius: 12px;
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.25rem;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}

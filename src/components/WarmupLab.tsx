@@ -271,81 +271,97 @@ export default function WarmupLab() {
                 </p>
 
                 {!showTypesLesson ? (
-                    <div className={`traffic-light-container reveal ${isVisible ? 'visible' : ''} delay-3`}>
-                        {/* LEFT: Traffic Light + Road Scene */}
-                        <div className="traffic-light" style={{ position: 'relative' }}>
-                            {/* Traffic Light SVG */}
-                            <svg width="100" height="260" viewBox="0 0 100 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="15" y="10" width="70" height="200" rx="16" fill="var(--bg-nebula)" stroke="var(--border-dim)" strokeWidth="2" />
-                                {/* Red */}
-                                <circle cx="50" cy="55" r="26" fill={lightColor('kırmızı')} stroke={lightStroke('kırmızı')} strokeWidth="2">
-                                    {activeLight === 'kırmızı' && <animate attributeName="opacity" values="1;0.7;1" dur="1s" repeatCount="indefinite" />}
-                                </circle>
-                                {activeLight === 'kırmızı' && <circle cx="50" cy="55" r="26" fill="none" stroke="#EF4444" strokeWidth="1" opacity="0.3"><animate attributeName="r" values="26;38" dur="1.5s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.3;0" dur="1.5s" repeatCount="indefinite" /></circle>}
-                                <text x="50" y="59" textAnchor="middle" fill={activeLight === 'kırmızı' ? '#fff' : 'var(--text-muted)'} fontSize="11" fontFamily="var(--font-display)" fontWeight="700">DUR</text>
+                    <div className={`lab-showcase reveal ${isVisible ? 'visible' : ''} delay-3`}>
+                        {/* LEFT: Premium Simulation Scene */}
+                        <div className="lab-scene-container">
+                            <div className="lab-scene-environment">
+                                {/* Grid Background */}
+                                <div className="lab-grid-bg"></div>
 
-                                {/* Yellow */}
-                                <circle cx="50" cy="115" r="26" fill={lightColor('sarı')} stroke={lightStroke('sarı')} strokeWidth="2">
-                                    {activeLight === 'sarı' && <animate attributeName="opacity" values="1;0.7;1" dur="0.5s" repeatCount="indefinite" />}
-                                </circle>
-                                {activeLight === 'sarı' && <circle cx="50" cy="115" r="26" fill="none" stroke="#FBBF24" strokeWidth="1" opacity="0.3"><animate attributeName="r" values="26;38" dur="1.5s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.3;0" dur="1.5s" repeatCount="indefinite" /></circle>}
-                                <text x="50" y="119" textAnchor="middle" fill={activeLight === 'sarı' ? '#000' : 'var(--text-muted)'} fontSize="9" fontFamily="var(--font-display)" fontWeight="700">HAZIR</text>
+                                {/* Glow ambient depending on active light */}
+                                <div className={`lab-ambient-glow glow-${activeLight || 'none'}`}></div>
 
-                                {/* Green */}
-                                <circle cx="50" cy="175" r="26" fill={lightColor('yeşil')} stroke={lightStroke('yeşil')} strokeWidth="2" />
-                                {activeLight === 'yeşil' && <circle cx="50" cy="175" r="26" fill="none" stroke="#34D399" strokeWidth="1" opacity="0.3"><animate attributeName="r" values="26;38" dur="1.5s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.3;0" dur="1.5s" repeatCount="indefinite" /></circle>}
-                                <text x="50" y="179" textAnchor="middle" fill={activeLight === 'yeşil' ? '#fff' : 'var(--text-muted)'} fontSize="10" fontFamily="var(--font-display)" fontWeight="700">GEÇ</text>
+                                {/* Premium Traffic Light */}
+                                <div className="premium-traffic-light">
+                                    <div className={`premium-bulb red ${activeLight === 'kırmızı' ? 'on' : ''}`}>
+                                        <div className="bulb-glare"></div>
+                                        <div className="bulb-label">DUR</div>
+                                    </div>
+                                    <div className={`premium-bulb yellow ${activeLight === 'sarı' ? 'on' : ''}`}>
+                                        <div className="bulb-glare"></div>
+                                        <div className="bulb-label" style={{ color: '#000' }}>HAZIR</div>
+                                    </div>
+                                    <div className={`premium-bulb green ${activeLight === 'yeşil' ? 'on' : ''}`}>
+                                        <div className="bulb-glare"></div>
+                                        <div className="bulb-label">GEÇ</div>
+                                    </div>
+                                </div>
 
-                                {/* Pole */}
-                                <rect x="42" y="210" width="16" height="50" fill="var(--bg-nebula)" stroke="var(--border-dim)" strokeWidth="1.5" />
-                            </svg>
+                                {/* Premium Road */}
+                                <div className="premium-road">
+                                    <div className="road-stripes"></div>
+                                    <div className="road-finish-line"></div>
+                                </div>
 
-                            {/* Road + Car scene */}
-                            {(stage === 'car_waiting' || stage === 'car_moving' || stage === 'speed_done') && (
-                                <svg width="500" height="120" viewBox="0 0 500 120" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', bottom: '-30px', left: '-40px' }}>
-                                    {/* Road */}
-                                    <rect x="0" y="40" width="500" height="50" rx="4" fill="var(--bg-nebula)" stroke="var(--border-dim)" strokeWidth="1" />
-                                    {/* Road dashes */}
-                                    {[0, 60, 120, 180, 240, 300, 360, 420].map(x => (
-                                        <rect key={x} x={x + 15} y="62" width="30" height="4" rx="2" fill="var(--accent-amber)" opacity="0.4" />
-                                    ))}
-                                    {/* Finish line */}
-                                    <rect x="480" y="40" width="4" height="50" fill="var(--accent-emerald)" opacity="0.6" />
-                                    <text x="488" y="35" fill="var(--accent-emerald)" fontSize="10" fontFamily="var(--font-mono)">🏁</text>
+                                {/* Premium Car */}
+                                {(stage === 'car_waiting' || stage === 'car_moving' || stage === 'speed_done') && (
+                                    <div
+                                        className={`premium-car ${carSpeed > 0 ? 'moving' : ''}`}
+                                        style={{
+                                            transform: `translateX(${carPosition}px)`,
+                                            transition: stage === 'car_moving' ? 'none' : 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)'
+                                        }}
+                                    >
+                                        {/* Underglow matching current light */}
+                                        <div className={`car-underglow glow-${activeLight || 'none'}`}></div>
 
-                                    {/* Car */}
-                                    <g transform={`translate(${carPosition}, 30)`} style={{ transition: stage === 'car_moving' ? 'none' : 'transform 0.3s ease' }}>
-                                        {/* Car body */}
-                                        <rect x="8" y="18" width="55" height="22" rx="4" fill="var(--accent-cyan)" />
-                                        <rect x="16" y="8" width="35" height="16" rx="4" fill="rgba(56,189,248,0.7)" />
-                                        {/* Windshield */}
-                                        <rect x="38" y="10" width="11" height="12" rx="2" fill="rgba(56,189,248,0.3)" stroke="var(--accent-cyan)" strokeWidth="0.5" />
-                                        {/* Headlights */}
-                                        <circle cx="63" cy="28" r="3" fill="#FBBF24" />
-                                        {carSpeed > 0 && <circle cx="63" cy="28" r="3" fill="#FBBF24" opacity="0.3"><animate attributeName="r" values="3;8" dur="0.8s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.4;0" dur="0.8s" repeatCount="indefinite" /></circle>}
-                                        {/* Wheels */}
-                                        <circle cx="20" cy="42" r="6" fill="var(--bg-void)" stroke="var(--text-muted)" strokeWidth="1.5">
-                                            {carSpeed > 0 && <animateTransform attributeName="transform" type="rotate" from="0 20 42" to="360 20 42" dur={`${Math.max(0.1, 1 - carSpeed / 150)}s`} repeatCount="indefinite" />}
-                                        </circle>
-                                        <circle cx="50" cy="42" r="6" fill="var(--bg-void)" stroke="var(--text-muted)" strokeWidth="1.5">
-                                            {carSpeed > 0 && <animateTransform attributeName="transform" type="rotate" from="0 50 42" to="360 50 42" dur={`${Math.max(0.1, 1 - carSpeed / 150)}s`} repeatCount="indefinite" />}
-                                        </circle>
-                                        {/* Speed trail */}
+                                        {/* Sleek Car SVG */}
+                                        <svg width="220" height="70" viewBox="0 0 220 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            {/* Shadow */}
+                                            <ellipse cx="110" cy="65" rx="100" ry="5" fill="#000000" opacity="0.6" />
+                                            {/* Main Body */}
+                                            <path d="M25 45 C15 45 10 35 15 25 C20 15 40 10 70 15 L120 12 C160 10 190 20 205 35 C215 45 205 55 190 55 L30 55 C15 55 15 45 25 45 Z" fill="var(--bg-card)" stroke="var(--border-dim)" strokeWidth="2" />
+                                            {/* Mid Body Accent */}
+                                            <path d="M40 35 L180 30 C190 30 195 40 185 45 L35 45 C25 45 30 35 40 35 Z" fill="var(--accent-cyan)" />
+                                            {/* Windows / Cabin */}
+                                            <path d="M65 15 C85 5 115 5 135 15 C145 20 135 30 120 30 L75 30 C60 30 55 20 65 15 Z" fill="#0F172A" stroke="rgba(56, 189, 248, 0.5)" strokeWidth="1" />
+                                            <path d="M90 7 L95 30" stroke="rgba(255,255,255,0.1)" strokeWidth="2" />
+
+                                            {/* Wheels */}
+                                            <circle cx="55" cy="55" r="14" fill="#0F172A" stroke="var(--text-muted)" strokeWidth="3" className={carSpeed > 0 ? 'wheel-spin' : ''} />
+                                            <circle cx="55" cy="55" r="4" fill="var(--accent-cyan)" />
+
+                                            <circle cx="165" cy="55" r="14" fill="#0F172A" stroke="var(--text-muted)" strokeWidth="3" className={carSpeed > 0 ? 'wheel-spin' : ''} />
+                                            <circle cx="165" cy="55" r="4" fill="var(--accent-cyan)" />
+
+                                            {/* Headlights (Front is right side) */}
+                                            <path d="M195 38 C205 38 210 40 210 42 C210 44 205 46 195 46 Z" fill="#FBBF24" />
+                                            {/* Taillights (Back is left side) */}
+                                            <path d="M15 35 L12 42 L18 40 Z" fill="#EF4444" />
+
+                                            {/* Glows when moving */}
+                                            {carSpeed > 0 && (
+                                                <g className="car-motion-fx">
+                                                    <ellipse cx="225" cy="42" rx="15" ry="4" fill="#FBBF24" filter="blur(2px)" opacity="0.8" />
+                                                    <ellipse cx="5" cy="38" rx="8" ry="4" fill="#EF4444" filter="blur(2px)" opacity="0.8" />
+                                                </g>
+                                            )}
+                                        </svg>
+
+                                        {/* Speed lines */}
                                         {carSpeed > 50 && (
-                                            <>
-                                                <line x1="5" y1="25" x2={-carSpeed / 5} y2="25" stroke="var(--accent-cyan)" strokeWidth="1.5" opacity="0.3" />
-                                                <line x1="5" y1="30" x2={-carSpeed / 4} y2="30" stroke="var(--accent-cyan)" strokeWidth="1" opacity="0.2" />
-                                                <line x1="5" y1="35" x2={-carSpeed / 6} y2="35" stroke="var(--accent-cyan)" strokeWidth="1" opacity="0.15" />
-                                            </>
+                                            <div className="speed-lines">
+                                                <span></span><span></span><span></span>
+                                            </div>
                                         )}
-                                    </g>
 
-                                    {/* Speed indicator */}
-                                    <text x="250" y="110" textAnchor="middle" fill="var(--accent-cyan)" fontSize="12" fontFamily="var(--font-mono)" fontWeight="700">
-                                        🚗 {carSpeed} km/h
-                                    </text>
-                                </svg>
-                            )}
+                                        {/* Speed HUD */}
+                                        <div className="car-speed-hud">
+                                            {carSpeed} <span style={{ fontSize: '0.6rem' }}>km/h</span>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         </div>
 
                         {/* RIGHT: Code Editor + Feedback */}
