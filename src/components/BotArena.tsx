@@ -4,7 +4,7 @@ import { useInView } from '../hooks/useInView';
 import { STRATEGY_TEMPLATES, ACTION_LABELS } from '../engine/BotParser';
 import { runFullSimulation, OPPONENT_STRATEGIES, TurnLog, CityState } from '../engine/BotEngine';
 
-type Phase = 'pick' | 'edit' | 'running' | 'result';
+type Phase = 'pick' | 'edit' | 'running' | 'result' | 'tournament';
 type StrategyKey = keyof typeof STRATEGY_TEMPLATES;
 
 export default function BotArena() {
@@ -89,6 +89,7 @@ export default function BotArena() {
             if (turn >= 16) {
                 clearInterval(interval);
                 setPhase('result');
+                dispatch({ type: 'ADD_YETKINLIK', amount: 20, label: 'Algoritmik Düşünme', beceri: 'Algoritmik Düşünme' });
                 dispatch({
                     type: 'UPDATE_RUBRIC',
                     scores: {
@@ -390,13 +391,132 @@ export default function BotArena() {
                                         <button className="btn btn--secondary" onClick={handleReset} style={{ fontSize: '0.85rem' }}>
                                             Tekrar Dene
                                         </button>
+                                        <button className="btn btn--primary" onClick={() => setPhase('tournament')} style={{ fontSize: '0.85rem' }}>
+                                            🏆 Turnuva Tablosu
+                                        </button>
                                     </div>
                                 </div>
                             </>
                         )}
                     </div>
                 )}
+
+                {/* Phase: Tournament */}
+                {phase === 'tournament' && (
+                    <TournamentBracket
+                        playerScore={playerResult?.finalScore ?? 0}
+                        onBack={handleReset}
+                    />
+                )}
             </div>
         </section>
+    );
+}
+
+/* ── Tournament Bracket Sub-component ── */
+const SIMULATED_PLAYERS = [
+    { name: 'Elif K.', score: 82 },
+    { name: 'Ahmet D.', score: 76 },
+    { name: 'Zeynep B.', score: 89 },
+    { name: 'Mert Y.', score: 71 },
+    { name: 'Ayşe T.', score: 85 },
+    { name: 'Can Ö.', score: 68 },
+    { name: 'Deniz A.', score: 91 },
+];
+
+function TournamentBracket({ playerScore, onBack }: { playerScore: number; onBack: () => void }) {
+    const allPlayers = useMemo(() => {
+        const players = [
+            { name: 'Sen', score: playerScore, isPlayer: true },
+            ...SIMULATED_PLAYERS.map(p => ({ ...p, isPlayer: false })),
+        ].sort((a, b) => b.score - a.score);
+        return players;
+    }, [playerScore]);
+
+    const playerRank = allPlayers.findIndex(p => p.isPlayer) + 1;
+
+    return (
+        <div className="reveal visible" style={{ animation: 'fadeSlideUp 0.5s ease' }}>
+            {/* Ranking header */}
+            <div className="card" style={{
+                textAlign: 'center', marginBottom: '1.5rem',
+                border: playerRank <= 3 ? '2px solid var(--accent-amber)' : '1px solid var(--border-dim)',
+                boxShadow: playerRank <= 3 ? '0 0 30px rgba(251,191,36,0.1)' : 'none',
+            }}>
+                <div style={{ fontSize: '2.5rem', marginBottom: '0.25rem' }}>
+                    {playerRank === 1 ? '🥇' : playerRank === 2 ? '🥈' : playerRank === 3 ? '🥉' : '🏅'}
+                </div>
+                <div style={{ fontSize: '1.3rem', fontWeight: 800, fontFamily: 'var(--font-display)', color: 'var(--text-primary)' }}>
+                    {playerRank}. Sıra
+                </div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                    Eskişehir Merkez Turnuvası — 8 Yarışmacı
+                </div>
+            </div>
+
+            {/* Leaderboard */}
+            <div className="card" style={{ marginBottom: '1.5rem' }}>
+                <h3 style={{ fontSize: '0.95rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-amber)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                    </svg>
+                    Liderlik Tablosu
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                    {allPlayers.map((p, i) => (
+                        <div key={p.name} style={{
+                            display: 'flex', alignItems: 'center', gap: '0.75rem',
+                            padding: '0.55rem 0.75rem',
+                            background: p.isPlayer ? 'rgba(56,189,248,0.08)' : 'var(--bg-void)',
+                            border: p.isPlayer ? '1px solid rgba(56,189,248,0.3)' : '1px solid transparent',
+                            borderRadius: '8px',
+                            transition: 'all 0.2s',
+                        }}>
+                            <span style={{
+                                width: '22px', height: '22px', borderRadius: '50%',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                fontSize: i < 3 ? '0.85rem' : '0.7rem',
+                                fontWeight: 800, fontFamily: 'var(--font-mono)',
+                                background: i === 0 ? 'rgba(251,191,36,0.15)' : i === 1 ? 'rgba(148,163,184,0.15)' : i === 2 ? 'rgba(205,127,50,0.15)' : 'rgba(255,255,255,0.03)',
+                                color: i === 0 ? 'var(--accent-amber)' : i === 1 ? 'var(--text-secondary)' : i === 2 ? '#CD7F32' : 'var(--text-muted)',
+                            }}>
+                                {i < 3 ? ['🥇', '🥈', '🥉'][i] : i + 1}
+                            </span>
+                            <span style={{
+                                flex: 1, fontSize: '0.85rem',
+                                fontWeight: p.isPlayer ? 700 : 400,
+                                color: p.isPlayer ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                            }}>
+                                {p.name}
+                                {p.isPlayer && <span style={{ fontSize: '0.7rem', color: 'var(--accent-cyan)', marginLeft: '0.3rem' }}>★</span>}
+                            </span>
+                            <div style={{ width: '60px', height: '6px', background: 'rgba(255,255,255,0.05)', borderRadius: '3px', overflow: 'hidden' }}>
+                                <div style={{
+                                    width: `${p.score}%`, height: '100%',
+                                    background: p.isPlayer
+                                        ? 'linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald))'
+                                        : 'linear-gradient(90deg, var(--text-muted), rgba(148,163,184,0.3))',
+                                    borderRadius: '3px',
+                                }} />
+                            </div>
+                            <span style={{
+                                fontFamily: 'var(--font-mono)', fontSize: '0.8rem', fontWeight: 700,
+                                color: p.isPlayer ? 'var(--accent-cyan)' : 'var(--text-muted)',
+                                minWidth: '35px', textAlign: 'right',
+                            }}>
+                                %{p.score}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Actions */}
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+                <button className="btn btn--secondary" onClick={onBack}>
+                    ← Yeniden Yarış
+                </button>
+            </div>
+        </div>
     );
 }

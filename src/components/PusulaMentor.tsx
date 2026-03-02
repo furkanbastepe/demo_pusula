@@ -134,6 +134,29 @@ const MENTOR_DB: Record<string, SectionConfig> = {
         ],
         fallback: 'Şehir yönetimi karmaşık bir problem — ama parçalara bölerek çözebilirsin. Hangi saatlerde kuyruk yoğun? Bu sorudan başla! 🏛️',
     },
+    'quick-decision': {
+        welcome: 'Hızlı Karar Modülü! ⚡ Gerçek dünya kriz senaryolarında zamana karşı yarışacaksın. Her saniye önemli!',
+        proactiveMessages: [
+            {
+                trigger: 'timeout',
+                message: 'Süre doldu! Kriz anlarında hızlı karar vermek çok önemli. Ama acele karar = kötü karar değildir. Asıl mesele şu: hangi bilgiye öncelik verdiğin. 🧠',
+            },
+        ],
+        responses: [
+            {
+                keywords: ['karar', 'doğru', 'nasıl', 'zor'],
+                socratic: 'Kriz anında karar verirken şunu düşün: Bu kararın en kötü sonucu ne olabilir? Geri dönüşü var mı?',
+                followUp: 'Karar bilimi (Decision Science) der ki: Belirsizlik altında en iyi strateji \"geri dönülebilir\" kararları hızla vermektir. Geri dönülemez kararlar için daha fazla bilgi topla.',
+                card: { title: 'Karar Matrisi', content: 'Hızlı karar framework\'ü:\n1. Etki büyüklüğü? (yüksek/düşük)\n2. Geri dönülebilir mi?\n3. Zaman baskısı var mı?\n\nYüksek etki + geri dönülemez = Daha fazla analiz\nDüşük etki + geri dönülebilir = Hızla karar ver' },
+            },
+            {
+                keywords: ['güvenlik', 'veri', 'sızıntı', 'siber'],
+                socratic: 'Siber güvenlikte altın kural nedir sence? Önce koru, sonra araştır — yoksa önce araştır, sonra koru mu?',
+                followUp: 'Doğru cevap: \"Containment First\" — önce hasarı sınırla, sonra araştır. Bu IT sektörünün evrensel kuralıdır.',
+            },
+        ],
+        fallback: 'Kriz yönetimi = Soğukkanlılık + Hızlı analiz + Kararlı eylem. Bu modülde tam bunu pratik ediyorsun! ⚡',
+    },
     'meridyen': {
         welcome: 'Meridyen Anı — düşüncenin modele dönüştüğü an! Belediye kuyruğunu çözmek için yaklaşımını seç.',
         proactiveMessages: [],
@@ -157,6 +180,23 @@ const MENTOR_DB: Record<string, SectionConfig> = {
             },
         ],
         fallback: 'Parametrelerle oyna ve sonuçları gözlemle. Veri analizi = deney yapmak + sonuç çıkarmak! 📊',
+    },
+    'data-interpret': {
+        welcome: 'Veri Yorumlama zamanı! 📊 Simülasyondan gelen grafikleri okuyup doğru sonuçları çıkar.',
+        proactiveMessages: [],
+        responses: [
+            {
+                keywords: ['grafik', 'tablo', 'veri', 'oku'],
+                socratic: 'Bir grafikte ilk bakman gereken şey ne? Trendi mi, uç değerleri mi, yoksa ortalamayı mı?',
+                followUp: 'Veri analisti olmanın ilk kuralı: Önce genel trendi gör, sonra anomalilere odaklan. Detay öncesi büyük resim!',
+            },
+            {
+                keywords: ['azalan', 'getiri', 'diminishing'],
+                socratic: 'Neden 6. gişeyi açmak 3. gişeyi açmak kadar etkili değil sence?',
+                followUp: 'Bu ekonomideki \"azalan marjinal getiri\" yasasıdır. Her ek birim daha az ek fayda sağlar. Veri bunu kanıtlıyor!',
+            },
+        ],
+        fallback: 'Grafikleri dikkatlice incele — her çubuk bir hikaye anlatıyor. Veri okuryazarlığı 21. yüzyılın temel becerisi! 📈',
     },
     'gate-chain': {
         welcome: 'Kalite Kapıları — öğrendiklerini derinleştirme zamanı! Neden ve Feynman testi seni bekliyor.',
@@ -230,8 +270,8 @@ export default function PusulaMentor() {
     // Determine current section from state
     const currentSection = useMemo(() => {
         const sections = [
-            'hero', 'onboarding-vignette', 'kivilcim-gate', 'warmup-lab', 'bot-arena', 'meridyen',
-            'codelab-main', 'gate-chain', 'transfer-cases', 'rubric-radar',
+            'hero', 'onboarding-vignette', 'kivilcim-gate', 'warmup-lab', 'bot-arena', 'quick-decision', 'meridyen',
+            'codelab-main', 'data-interpret', 'gate-chain', 'transfer-cases', 'rubric-radar',
             'social-proof', 'certificate', 'snapshot-cta',
         ];
         return sections[state.currentSection] || 'hero';

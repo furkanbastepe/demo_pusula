@@ -15,12 +15,20 @@ import Certificate from './components/Certificate';
 import SnapshotCTA from './components/SnapshotCTA';
 import DataNote from './components/DataNote';
 import PusulaMentor from './components/PusulaMentor';
+import PartnerView from './components/PartnerView';
+import SkillBar from './components/SkillBar';
+import YetkinlikPopup from './components/YetkinlikPopup';
+import QuickDecision from './components/QuickDecision';
+import DataInterpret from './components/DataInterpret';
 
 export default function App() {
     return (
         <PusulaProvider>
             <Navbar />
+            <SkillBar />
+            <YetkinlikPopup />
             <PusulaMentor />
+            <PartnerView />
             <main>
                 <Hero />
                 {/* Wave divider */}
@@ -45,6 +53,13 @@ export default function App() {
                     </svg>
                 </div>
                 <BotArena />
+                {/* Wave divider */}
+                <div className="wave-divider">
+                    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+                        <path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="var(--bg-cosmos)" />
+                    </svg>
+                </div>
+                <QuickDecision />
                 <Meridyen />
                 {/* Wave divider */}
                 <div className="wave-divider">
@@ -53,6 +68,7 @@ export default function App() {
                     </svg>
                 </div>
                 <CodelabMain />
+                <DataInterpret />
                 <GateChain />
                 {/* Wave divider */}
                 <div className="wave-divider">

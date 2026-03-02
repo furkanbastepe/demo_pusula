@@ -33,6 +33,9 @@ export interface PusulaState {
         oncelikliOran: number;
     };
     currentSection: number;
+    yetkinlikPuani: number;
+    kazanilanBeceriler: string[];
+    showYetkinlikPopup: { amount: number; label: string } | null;
 }
 
 /* ── Actions ── */
@@ -48,7 +51,9 @@ type Action =
     | { type: 'COMPLETE_TRANSFER'; scores: number[] }
     | { type: 'UPDATE_RUBRIC'; scores: Partial<PusulaState['rubricScores']> }
     | { type: 'SET_SECTION'; index: number }
-    | { type: 'ADVANCE_STAGE'; stage: Stage };
+    | { type: 'ADVANCE_STAGE'; stage: Stage }
+    | { type: 'ADD_YETKINLIK'; amount: number; label: string; beceri?: string }
+    | { type: 'HIDE_YETKINLIK_POPUP' };
 
 /* ── Initial State ── */
 const initialState: PusulaState = {
@@ -73,6 +78,9 @@ const initialState: PusulaState = {
         oncelikliOran: 0.2,
     },
     currentSection: 0,
+    yetkinlikPuani: 0,
+    kazanilanBeceriler: [],
+    showYetkinlikPopup: null,
 };
 
 /* ── Reducer ── */
@@ -147,6 +155,17 @@ function reducer(state: PusulaState, action: Action): PusulaState {
             return { ...state, currentSection: action.index };
         case 'ADVANCE_STAGE':
             return { ...state, stage: action.stage };
+        case 'ADD_YETKINLIK':
+            return {
+                ...state,
+                yetkinlikPuani: state.yetkinlikPuani + action.amount,
+                kazanilanBeceriler: action.beceri && !state.kazanilanBeceriler.includes(action.beceri)
+                    ? [...state.kazanilanBeceriler, action.beceri]
+                    : state.kazanilanBeceriler,
+                showYetkinlikPopup: { amount: action.amount, label: action.label },
+            };
+        case 'HIDE_YETKINLIK_POPUP':
+            return { ...state, showYetkinlikPopup: null };
         default:
             return state;
     }

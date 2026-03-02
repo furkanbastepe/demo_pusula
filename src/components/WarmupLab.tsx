@@ -201,6 +201,7 @@ export default function WarmupLab() {
 
     const handleProceed = useCallback(() => {
         dispatch({ type: 'COMPLETE_WARMUP' });
+        dispatch({ type: 'ADD_YETKINLIK', amount: 15, label: 'Sokratik Düşünme', beceri: 'Sokratik Düşünme' });
         document.getElementById('meridyen')?.scrollIntoView({ behavior: 'smooth' });
     }, [dispatch]);
 

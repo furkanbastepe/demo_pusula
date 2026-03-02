@@ -1,4 +1,26 @@
+import { useState, useEffect, useRef } from 'react';
 import { useInView } from '../hooks/useInView';
+
+/* CountUp hook — animates number from 0 to target */
+function useCountUp(target: number, duration: number, start: boolean): number {
+    const [value, setValue] = useState(0);
+    const rafRef = useRef<number>(0);
+    useEffect(() => {
+        if (!start) return;
+        const startTime = performance.now();
+        const animate = (now: number) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // ease-out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setValue(Math.round(eased * target));
+            if (progress < 1) rafRef.current = requestAnimationFrame(animate);
+        };
+        rafRef.current = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(rafRef.current);
+    }, [target, duration, start]);
+    return value;
+}
 
 const weekDays = [
     {
@@ -39,11 +61,32 @@ const weekDays = [
     },
 ];
 
-const metrics = [
-    { label: 'Öğretme Puanı', value: '87', color: 'var(--accent-emerald)', desc: 'Ortalama Feynman skoru' },
-    { label: 'Ateşleme Katılımı', value: '%92', color: 'var(--accent-cyan)', desc: 'Haftalık aktif katılım' },
-    { label: 'Kalfa-Aday Eşleşme', value: '%78', color: 'var(--accent-violet)', desc: 'Başarılı mentorluk oranı' },
+const metricsData = [
+    { label: 'Öğretme Puanı', value: 87, suffix: '', color: 'var(--accent-emerald)', desc: 'Ortalama Feynman skoru' },
+    { label: 'Ateşleme Katılımı', value: 92, suffix: '%', color: 'var(--accent-cyan)', desc: 'Haftalık aktif katılım' },
+    { label: 'Kalfa-Aday Eşleşme', value: 78, suffix: '%', color: 'var(--accent-violet)', desc: 'Başarılı mentorluk oranı' },
+    { label: 'Aktif Lonca Üyesi', value: 142, suffix: '', color: 'var(--accent-amber)', desc: 'Eskişehir Merkez' },
 ];
+
+const loncaRanks = [
+    { rank: 'Aday', desc: 'İlk 2 hafta — temel beceriler', pct: 100, color: 'var(--text-muted)', glow: false },
+    { rank: 'Kalfa', desc: 'Hafta 3-5 — proje üretimi', pct: 72, color: 'var(--accent-cyan)', glow: false },
+    { rank: 'Usta', desc: 'Hafta 6-7 — mentorluk başlar', pct: 38, color: 'var(--accent-emerald)', glow: true },
+    { rank: 'Ateşleyen', desc: 'Hafta 8 — topluluk lideri', pct: 12, color: 'var(--accent-amber)', glow: true },
+];
+
+function AnimatedMetric({ m, animate }: { m: typeof metricsData[0]; animate: boolean }) {
+    const count = useCountUp(m.value, 1800, animate);
+    return (
+        <div className="kpi-card" style={{ borderColor: `color-mix(in srgb, ${m.color} 20%, transparent)` }}>
+            <div className="kpi-card__value" style={{ color: m.color }}>
+                {m.suffix === '%' ? `%${count}` : count}
+            </div>
+            <div className="kpi-card__label">{m.label}</div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>{m.desc}</div>
+        </div>
+    );
+}
 
 export default function SocialProof() {
     const { ref, isVisible } = useInView(0.15);
@@ -123,14 +166,34 @@ export default function SocialProof() {
                     ))}
                 </div>
 
-                {/* Pilot Metrics */}
-                <div className={`grid-3 reveal ${isVisible ? 'visible' : ''} delay-5`} style={{ marginTop: '2rem' }}>
-                    {metrics.map(m => (
-                        <div key={m.label} className="kpi-card" style={{ borderColor: `color-mix(in srgb, ${m.color} 20%, transparent)` }}>
-                            <div className="kpi-card__value" style={{ color: m.color }}>{m.value}</div>
-                            <div className="kpi-card__label">{m.label}</div>
-                            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>{m.desc}</div>
+                {/* Lonca Ranks */}
+                <h3 className={`reveal ${isVisible ? 'visible' : ''} delay-4`} style={{ marginBottom: '1rem', textAlign: 'center', marginTop: '2rem' }}>Yükseliş Yolu</h3>
+                <div className={`grid-4 reveal ${isVisible ? 'visible' : ''} delay-5`}>
+                    {loncaRanks.map(r => (
+                        <div key={r.rank} className="card" style={{
+                            textAlign: 'center', padding: '1.25rem 0.75rem',
+                            border: `1px solid color-mix(in srgb, ${r.color} 25%, transparent)`,
+                            boxShadow: r.glow ? `0 0 20px color-mix(in srgb, ${r.color} 10%, transparent)` : 'none',
+                            transition: 'box-shadow 0.3s, border-color 0.3s',
+                        }}>
+                            <div style={{ fontSize: '1.4rem', fontWeight: 800, fontFamily: 'var(--font-display)', color: r.color }}>{r.rank}</div>
+                            <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.35rem', lineHeight: 1.6 }}>{r.desc}</p>
+                            <div style={{ width: '100%', height: '4px', background: 'rgba(255,255,255,0.05)', borderRadius: '2px', marginTop: '0.75rem', overflow: 'hidden' }}>
+                                <div style={{
+                                    width: isVisible ? `${r.pct}%` : '0%',
+                                    height: '100%', background: r.color, borderRadius: '2px',
+                                    transition: 'width 1.2s ease',
+                                }} />
+                            </div>
+                            <span style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: r.color, marginTop: '0.35rem', display: 'block' }}>%{r.pct} öğrenci</span>
                         </div>
+                    ))}
+                </div>
+
+                {/* Animated Metrics */}
+                <div className={`grid-4 reveal ${isVisible ? 'visible' : ''} delay-5`} style={{ marginTop: '1.5rem' }}>
+                    {metricsData.map(m => (
+                        <AnimatedMetric key={m.label} m={m} animate={isVisible} />
                     ))}
                 </div>
             </div>

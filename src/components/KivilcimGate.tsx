@@ -19,6 +19,7 @@ export default function KivilcimGate() {
         if (!isComplete) return;
         dispatch({ type: 'SET_KIVILCIM', text });
         dispatch({ type: 'COMPLETE_KIVILCIM' });
+        dispatch({ type: 'ADD_YETKINLIK', amount: 10, label: 'Problem Tanımlama', beceri: 'Problem Tanımlama' });
     }, [isComplete, text, dispatch]);
 
     const alreadyCompleted = state.stage !== 'intro';
