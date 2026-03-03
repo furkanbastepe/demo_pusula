@@ -110,7 +110,7 @@ export default function KivilcimGate() {
                                     onClick={() => handleSelectStrategy(strategy.id, strategy.aiSynthesis)}
                                     disabled={alreadyCompleted}
                                 >
-                                    <div className="strategy-icon">{strategy.icon}</div>
+                                    <div className="strategy-icon-box">{strategy.icon}</div>
                                     <span className="strategy-title">{strategy.title}</span>
                                     <span className="strategy-desc">{strategy.desc}</span>
                                 </button>

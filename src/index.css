@@ -3504,3 +3504,196 @@ circle[cx="165"] {
   backdrop-filter: blur(8px);
   white-space: nowrap;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   KIVILCIM GATE STRATEGY CARDS UI/UX PRO MAX
+   ═══════════════════════════════════════════════════════════ */
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .strategy-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.strategy-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  backdrop-filter: blur(12px);
+}
+
+/* Base Neon Glow effect on hover */
+.strategy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(251, 191, 36, 0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.strategy-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(251, 191, 36, 0.4);
+  /* accent-amber */
+  box-shadow: 0 15px 35px -10px rgba(251, 191, 36, 0.2), inset 0 0 20px rgba(251, 191, 36, 0.05);
+}
+
+.strategy-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Selection State */
+.strategy-card.selected {
+  border-color: var(--accent-amber);
+  background: rgba(251, 191, 36, 0.08);
+  /* accent-amber tiny opacity */
+  box-shadow: 0 0 40px rgba(251, 191, 36, 0.2), inset 0 0 20px rgba(251, 191, 36, 0.1);
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.strategy-card.selected .strategy-icon-box {
+  background: var(--accent-amber);
+  color: #000;
+  box-shadow: 0 0 20px var(--accent-amber);
+  transform: scale(1.1);
+}
+
+.strategy-card.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
+/* Content z-index so it sits above pseudo element */
+.strategy-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+.strategy-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  margin-bottom: 0.5rem;
+}
+
+.strategy-card:hover .strategy-icon-box {
+  background: rgba(251, 191, 36, 0.2);
+  border-color: var(--accent-amber);
+  color: var(--accent-amber);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+.strategy-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.strategy-card:hover .strategy-title {
+  color: var(--accent-amber);
+}
+
+.strategy-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-family: var(--font-body);
+}
+
+/* Synthesis Box UI/UX Pro Max styling */
+.synthesis-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(56, 189, 248, 0.05);
+}
+
+.synthesis-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+  padding-bottom: 0.75rem;
+}
+
+.synthesis-header .spinning {
+  animation: spin 2s linear infinite;
+}
+
+.synthesis-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  min-height: 80px;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.2em;
+  background-color: var(--accent-cyan);
+  vertical-align: middle;
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+
+.synthesis-success {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  color: var(--accent-emerald);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  background: rgba(52, 211, 153, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px dashed rgba(52, 211, 153, 0.3);
+}
