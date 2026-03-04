@@ -63,7 +63,7 @@ export default function MobileEmulator() {
                 </div>
 
                 {/* Right — Phone Frame */}
-                <div className={`emulator-section__device reveal ${isVisible ? 'visible' : ''} delay-2`} style={{ marginLeft: '-90px', marginTop: '50px' }}>
+                <div className={`emulator-section__device reveal ${isVisible ? 'visible' : ''} delay-2`} style={{ marginLeft: '-250px', marginTop: '110px' }}>
                     <div className="emu-phone">
                         <div className="emu-phone__notch" />
                         <div className="emu-phone__screen">
