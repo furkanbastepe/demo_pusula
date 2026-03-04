@@ -1,0 +1,28 @@
+{
+  "id": "prob_social_007",
+  "title": "Sosyal Yardım Başvuru ve Takip Sistemi",
+  "description": "Antalya'da ihtiyaç sahibi vatandaşların sosyal yardım başvurularını kolaylaştırmak ve süreçleri şeffaflaştırmak için dijital bir sistem geliştirmek istiyoruz. Sistem, başvuru formlarını basitleştirmeli, gerekli belgeleri dijital ortamda toplamalı, başvuru durumunu takip etmeyi sağlamalı ve uygun yardım programlarını otomatik olarak önermelidir. Ayrıca, sosyal çalışmacılar için vaka yönetimi ve raporlama araçları içermelidir.",
+  "organization": "Antalya Büyükşehir Belediyesi",
+  "organizationId": "org_antbb_001",
+  "impactArea": "socialServices",
+  "city": "antalya",
+  "requiredSkills": ["Yazılım Geliştirici", "Veri Analisti", "UI/UX Tasarım"],
+  "status": "open",
+  "urgencyLevel": 4,
+  "impactScore": 85,
+  "submittedAt": "2025-01-14T10:30:00Z",
+  "deadline": "2025-04-15T23:59:59Z",
+  "attachments": [],
+  "constraints": {
+    "budget": "Sosyal hizmetler bütçesi",
+    "timeline": "3 ay içinde pilot uygulama",
+    "technical": "KVKK uyumlu, güvenli veri işleme, mobil erişim"
+  },
+  "engagement": {
+    "views": 198,
+    "saves": 35,
+    "workshopApplications": 16,
+    "activeWorkshops": 2,
+    "submittedSolutions": 0
+  }
+}

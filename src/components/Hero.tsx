@@ -10,7 +10,7 @@ export default function Hero() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const scrollToNext = () => {
-        document.getElementById('onboarding-vignette')?.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('mobile-emulator')?.scrollIntoView({ behavior: 'smooth' });
     };
 
     /* Generate stars for ambient background */

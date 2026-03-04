@@ -1,0 +1,28 @@
+{
+  "id": "prob_tech_008",
+  "title": "Akıllı Park Yeri Bulma ve Rezervasyon Sistemi",
+  "description": "Adana'da park yeri bulmak için harcanan zaman ve yakıt israfını azaltmak için akıllı bir park yeri sistemi geliştirmek istiyoruz. Sistem, gerçek zamanlı park yeri durumunu göstermeli, kullanıcıların önceden rezervasyon yapabilmesini sağlamalı ve en yakın boş park yerini yönlendirme ile göstermelidir. IoT sensörleri ve kamera sistemleri ile entegre çalışarak, park alanlarının doluluk oranlarını anlık olarak takip etmelidir.",
+  "organization": "Adana Büyükşehir Belediyesi",
+  "organizationId": "org_adanabb_001",
+  "impactArea": "technology",
+  "city": "adana",
+  "requiredSkills": ["IoT", "Mobil Uygulama", "Veri Analisti", "Backend Geliştirme"],
+  "status": "open",
+  "urgencyLevel": 3,
+  "impactScore": 82,
+  "submittedAt": "2025-01-16T15:20:00Z",
+  "deadline": "2025-06-30T23:59:59Z",
+  "attachments": [],
+  "constraints": {
+    "budget": "Akıllı şehir projesi bütçesi",
+    "timeline": "5 ay içinde pilot bölge uygulaması",
+    "technical": "IoT sensör entegrasyonu, gerçek zamanlı veri işleme"
+  },
+  "engagement": {
+    "views": 221,
+    "saves": 38,
+    "workshopApplications": 14,
+    "activeWorkshops": 1,
+    "submittedSolutions": 0
+  }
+}

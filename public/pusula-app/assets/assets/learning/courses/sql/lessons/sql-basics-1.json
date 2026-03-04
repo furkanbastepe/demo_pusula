@@ -1,0 +1,63 @@
+{
+  "id": "sql-basics-1",
+  "courseId": "sql-basics",
+  "order": 1,
+  "title": "Veritabanı Nedir?",
+  "estimatedTime": 15,
+  "xpReward": 50,
+  "sections": [
+    {
+      "type": "content",
+      "data": {
+        "markdown": "# Veritabanı Nedir?\n\nVeritabanları, verileri düzenli bir şekilde depolayan büyük kovalar gibidir. Düşün ki bir kütüphanen var - kitapları rastgele yere koyamazsın, değil mi? İşte veritabanları da böyle çalışır!\n\n## Neden Veritabanı Kullanırız?\n\n- 📊 **Düzenli Veri**: Binlerce veriyi organize eder\n- 🔍 **Hızlı Arama**: İstediğin veriyi saniyeler içinde bulur\n- 🔒 **Güvenli**: Verilerinizi korur\n- 👥 **Paylaşım**: Birden fazla kişi aynı anda kullanabilir\n\n## Tablo Yapısı\n\nVeritabanlarında veriler **tablolar** halinde saklanır. Her tablo satır ve sütunlardan oluşur:\n\n**workers** tablosu örneği:\n\n| firstname | lastname | age | exp_years | gender |\n|-----------|----------|-----|-----------|--------|\n| Ghully    | Thuas    | 29  | 2.3       | Female |\n| Bostal    | Shkolky  | 32  | 0.2       | Male   |\n| Qaostu    | Malop    | 21  | 4.0       | Female |\n\n- **Sütunlar**: Veri türlerini gösterir (isim, yaş, vb.)\n- **Satırlar**: Her bir kayıt (her bir çalışan)\n\n## SQL Nedir?\n\nSQL (Structured Query Language), veritabanı ile konuşmak için kullandığımız dildir. Türkçe'si \"Yapılandırılmış Sorgu Dili\" demektir.\n\nSQL ile yapabileceklerin:\n- ✅ Veri sorgulama (SELECT)\n- ➕ Veri ekleme (INSERT)\n- ✏️ Veri güncelleme (UPDATE)\n- ❌ Veri silme (DELETE)"
+      }
+    },
+    {
+      "type": "quiz",
+      "data": {
+        "question": "Bir veritabanında veriler nasıl organize edilir?",
+        "options": [
+          "Tablolar halinde",
+          "Dosyalar halinde",
+          "Klasörler halinde",
+          "Listeler halinde"
+        ],
+        "correctAnswerIndex": 0,
+        "explanation": "Veritabanlarında veriler tablolar halinde organize edilir. Her tablo satır ve sütunlardan oluşur, tıpkı Excel tablosu gibi!",
+        "xpReward": 10
+      }
+    },
+    {
+      "type": "quiz",
+      "data": {
+        "question": "SQL'in açılımı nedir?",
+        "options": [
+          "Simple Query Language",
+          "Structured Query Language",
+          "Standard Query Language",
+          "System Query Language"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "SQL, Structured Query Language (Yapılandırılmış Sorgu Dili) anlamına gelir. Veritabanları ile iletişim kurmak için kullanılan standart bir dildir.",
+        "xpReward": 10
+      }
+    },
+    {
+      "type": "code_challenge",
+      "data": {
+        "description": "**workers** tablosundan tüm sütunları çekmek için hangi SQL sorgusunu kullanmalıyız?",
+        "codeExample": "-- workers tablosu:\n-- firstname | lastname | age | exp_years | gender\n-- Ghully | Thuas | 29 | 2.3 | Female\n-- Bostal | Shkolky | 32 | 0.2 | Male\n-- Qaostu | Malop | 21 | 4.0 | Female",
+        "options": [
+          "SELECT all FROM workers",
+          "SELECT * FROM workers",
+          "GET * FROM workers",
+          "SELECT firstname, lastname FROM workers"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "SELECT * FROM workers komutu tablodaki tüm sütunları seçer. * işareti 'tüm sütunlar' anlamına gelir.",
+        "detailedSolution": "# SQL SELECT Komutu\n\nSQL'de bir tablodan tüm verileri çekmek için **SELECT * FROM tablo_adı** sözdizimini kullanırız.\n\n## Doğru Cevap:\n```sql\nSELECT * FROM workers\n```\n\n## Neden?\n- `SELECT`: Veri seçme komutu\n- `*`: Tüm sütunları seç (yıldız işareti)\n- `FROM workers`: workers tablosundan\n\n## Yanlış Seçenekler:\n❌ `SELECT all FROM workers` - SQL'de 'all' anahtar kelimesi yoktur\n❌ `GET * FROM workers` - SQL'de 'GET' komutu yoktur, 'SELECT' kullanılır\n❌ `SELECT firstname, lastname FROM workers` - Bu sadece 2 sütun seçer, tümünü değil",
+        "xpReward": 30
+      }
+    }
+  ]
+}

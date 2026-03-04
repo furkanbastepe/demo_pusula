@@ -1,6 +1,7 @@
 import { PusulaProvider } from './state/PusulaContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import MobileEmulator from './components/MobileEmulator';
 import OnboardingVignette from './components/OnboardingVignette';
 import KivilcimGate from './components/KivilcimGate';
 import WarmupLab from './components/WarmupLab';
@@ -31,6 +32,13 @@ export default function App() {
             <PartnerView />
             <main>
                 <Hero />
+                {/* Wave divider */}
+                <div className="wave-divider">
+                    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+                        <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,40 1440,50 L1440,80 L0,80 Z" fill="var(--bg-void)" />
+                    </svg>
+                </div>
+                <MobileEmulator />
                 {/* Wave divider */}
                 <div className="wave-divider">
                     <svg viewBox="0 0 1440 80" preserveAspectRatio="none">

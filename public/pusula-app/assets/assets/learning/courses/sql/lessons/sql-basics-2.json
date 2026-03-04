@@ -1,0 +1,65 @@
+{
+  "id": "sql-basics-2",
+  "courseId": "sql-basics",
+  "order": 2,
+  "title": "WHERE ile Filtreleme",
+  "estimatedTime": 20,
+  "xpReward": 75,
+  "sections": [
+    {
+      "type": "content",
+      "data": {
+        "markdown": "# WHERE Komutu ile Filtreleme\n\nBazen tablodaki tüm verilere değil, sadece belirli koşullara uyan verilere ihtiyacımız olur. İşte burada **WHERE** komutu devreye girer!\n\n## WHERE Nedir?\n\nWHERE, SQL'de filtreleme yapmamızı sağlar. Düşün ki bir kütüphaneden sadece bilim kurgu kitaplarını istiyorsun - WHERE komutu tam olarak bunu yapar!\n\n## Temel Kullanım\n\n```sql\nSELECT * FROM workers\nWHERE age > 25\n```\n\nBu sorgu, yaşı 25'ten büyük olan tüm çalışanları getirir.\n\n## Karşılaştırma Operatörleri\n\n| Operatör | Anlamı | Örnek |\n|----------|--------|-------|\n| = | Eşittir | age = 30 |\n| > | Büyüktür | age > 25 |\n| < | Küçüktür | age < 40 |\n| >= | Büyük eşittir | exp_years >= 2 |\n| <= | Küçük eşittir | exp_years <= 5 |\n| != | Eşit değildir | gender != 'Male' |\n\n## Metin Filtreleme\n\nMetin değerleri için tek tırnak kullanırız:\n\n```sql\nSELECT * FROM workers\nWHERE gender = 'Female'\n```\n\n## Birden Fazla Koşul\n\n**AND** operatörü ile birden fazla koşul ekleyebiliriz:\n\n```sql\nSELECT * FROM workers\nWHERE age > 25 AND gender = 'Female'\n```\n\nBu sorgu, yaşı 25'ten büyük VE kadın olan çalışanları getirir."
+      }
+    },
+    {
+      "type": "quiz",
+      "data": {
+        "question": "WHERE komutu ne işe yarar?",
+        "options": [
+          "Verileri sıralar",
+          "Verileri filtreler",
+          "Verileri siler",
+          "Verileri günceller"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "WHERE komutu, belirli koşullara uyan verileri filtrelemek için kullanılır. Örneğin, sadece yaşı 30'dan büyük olanları getirmek gibi.",
+        "xpReward": 15
+      }
+    },
+    {
+      "type": "code_challenge",
+      "data": {
+        "description": "**workers** tablosundan sadece yaşı 30'dan küçük olan çalışanları getiren sorgu hangisidir?",
+        "codeExample": "-- workers tablosu:\n-- firstname | lastname | age | exp_years | gender\n-- Ghully | Thuas | 29 | 2.3 | Female\n-- Bostal | Shkolky | 32 | 0.2 | Male\n-- Qaostu | Malop | 21 | 4.0 | Female",
+        "options": [
+          "SELECT * FROM workers WHERE age = 30",
+          "SELECT * FROM workers WHERE age > 30",
+          "SELECT * FROM workers WHERE age < 30",
+          "SELECT * FROM workers WHERE age <= 30"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "age < 30 koşulu, yaşı 30'dan küçük olan tüm kayıtları getirir. Bu örnekte Ghully (29) ve Qaostu (21) gelir.",
+        "detailedSolution": "# WHERE ile Filtreleme\n\n## Doğru Cevap:\n```sql\nSELECT * FROM workers\nWHERE age < 30\n```\n\n## Sonuç:\nBu sorgu şu kayıtları getirir:\n- Ghully Thuas (29 yaşında)\n- Qaostu Malop (21 yaşında)\n\nBostal Shkolky (32 yaşında) gelMEZ çünkü 32 > 30\n\n## Operatör Farkları:\n- `<` : Küçüktür (30 dahil değil)\n- `<=` : Küçük eşittir (30 dahil)\n- `>` : Büyüktür (30 dahil değil)\n- `>=` : Büyük eşittir (30 dahil)\n\n## İpucu:\n'dan küçük' = `<`\n'dan büyük' = `>`",
+        "xpReward": 30
+      }
+    },
+    {
+      "type": "code_challenge",
+      "data": {
+        "description": "**workers** tablosundan sadece kadın çalışanları getiren sorgu hangisidir?",
+        "codeExample": "-- workers tablosu:\n-- firstname | lastname | age | exp_years | gender\n-- Ghully | Thuas | 29 | 2.3 | Female\n-- Bostal | Shkolky | 32 | 0.2 | Male\n-- Qaostu | Malop | 21 | 4.0 | Female",
+        "options": [
+          "SELECT * FROM workers WHERE gender = Female",
+          "SELECT * FROM workers WHERE gender = 'Female'",
+          "SELECT * FROM workers WHERE gender == 'Female'",
+          "SELECT * FROM workers WHERE 'Female' = gender"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Metin değerleri için tek tırnak kullanmalıyız: gender = 'Female'. SQL'de metin değerleri her zaman tek tırnak içinde yazılır.",
+        "detailedSolution": "# Metin Filtreleme\n\n## Doğru Cevap:\n```sql\nSELECT * FROM workers\nWHERE gender = 'Female'\n```\n\n## Önemli Kurallar:\n1. **Metin değerleri tek tırnak içinde**: 'Female', 'Male', 'Ankara'\n2. **Sayılar tırnaksız**: age = 30, exp_years = 2.5\n3. **SQL'de = kullanılır**: == değil, = kullanılır\n\n## Yanlış Seçenekler:\n❌ `gender = Female` - Tırnak yok, hata verir\n❌ `gender == 'Female'` - SQL'de == değil = kullanılır\n❌ `'Female' = gender` - Teknik olarak çalışır ama standart değil",
+        "xpReward": 30
+      }
+    }
+  ]
+}

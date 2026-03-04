@@ -1,0 +1,28 @@
+{
+  "id": "prob_edu_002",
+  "title": "Yaşlılar İçin Dijital Okuryazarlık Platformu",
+  "description": "Yaşlı vatandaşlarımızın dijital dünyaya adapte olması için interaktif ve kullanıcı dostu bir eğitim platformuna ihtiyacımız var. Platform, temel bilgisayar kullanımından e-devlet işlemlerine kadar geniş bir yelpazede eğitim içerikleri sunmalı. Özellikle büyük yazı tipleri, sesli yönlendirmeler ve basit arayüz tasarımı önemli. Yaşlıların kendi hızlarında öğrenebilecekleri, tekrar edebilecekleri ve pratik yapabilecekleri bir sistem olmalı.",
+  "organization": "Ankara Büyükşehir Belediyesi",
+  "organizationId": "org_abb_001",
+  "impactArea": "education",
+  "city": "ankara",
+  "requiredSkills": ["UI/UX Tasarım", "Yazılım Geliştirici", "Eğitim Teknolojileri"],
+  "status": "open",
+  "urgencyLevel": 3,
+  "impactScore": 88,
+  "submittedAt": "2025-01-18T14:30:00Z",
+  "deadline": "2025-06-15T23:59:59Z",
+  "attachments": [],
+  "constraints": {
+    "budget": "Orta ölçekli proje bütçesi",
+    "timeline": "5 ay içinde pilot uygulama",
+    "technical": "Mobil ve web uyumlu olmalı, erişilebilirlik standartlarına uygun"
+  },
+  "engagement": {
+    "views": 156,
+    "saves": 28,
+    "workshopApplications": 15,
+    "activeWorkshops": 1,
+    "submittedSolutions": 0
+  }
+}

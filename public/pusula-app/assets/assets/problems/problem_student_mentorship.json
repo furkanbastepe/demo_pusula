@@ -1,0 +1,28 @@
+{
+  "id": "prob_edu_009",
+  "title": "Öğrenci-Mentor Eşleştirme Platformu",
+  "description": "Gaziantep'teki üniversite öğrencilerini sektör profesyonelleri ile buluşturan bir mentorluk platformu oluşturmak istiyoruz. Platform, öğrencilerin kariyer hedeflerine göre uygun mentorları bulmasını, düzenli görüşmeler planlamasını, ilerleme takibi yapmasını ve mentorluk sürecini yönetmesini sağlamalıdır. Ayrıca, mentorlar için öğrenci portföyü yönetimi ve geri bildirim araçları içermelidir.",
+  "organization": "Gaziantep Üniversitesi",
+  "organizationId": "org_gantep_uni_001",
+  "impactArea": "education",
+  "city": "gaziantep",
+  "requiredSkills": ["Web Geliştirme", "Algoritma Tasarımı", "UI/UX Tasarım"],
+  "status": "open",
+  "urgencyLevel": 2,
+  "impactScore": 70,
+  "submittedAt": "2025-01-19T12:00:00Z",
+  "deadline": "2025-08-31T23:59:59Z",
+  "attachments": [],
+  "constraints": {
+    "budget": "Üniversite eğitim bütçesi",
+    "timeline": "7 ay içinde akademik yıl başında hazır",
+    "technical": "Üniversite öğrenci bilgi sistemi ile entegre"
+  },
+  "engagement": {
+    "views": 167,
+    "saves": 29,
+    "workshopApplications": 11,
+    "activeWorkshops": 1,
+    "submittedSolutions": 0
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "python-basics-3",
+  "courseId": "python-basics",
+  "order": 3,
+  "title": "Veri Tipleri ve Dönüşümler",
+  "estimatedTime": 25,
+  "xpReward": 80,
+  "sections": [
+    {
+      "type": "content",
+      "data": {
+        "markdown": "# Veri Tipleri 🔢\n\nPython'da farklı veri tipleri vardır. Her birinin kendine özgü özellikleri var!\n\n## Temel Veri Tipleri\n\n### 1. String (str) - Metin\n```python\nisim = \"Zeynep\"\nsehir = 'İstanbul'\nmesaj = \"Merhaba Dünya!\"\n```\n\n### 2. Integer (int) - Tam Sayı\n```python\nyas = 25\nogrenci_sayisi = 150\nsicaklik = -5\n```\n\n### 3. Float - Ondalıklı Sayı\n```python\nboy = 1.75\nfiyat = 49.99\npi = 3.14\n```\n\n### 4. Boolean (bool) - Doğru/Yanlış\n```python\naktif_mi = True\ntamamlandi_mi = False\n```\n\n## type() Fonksiyonu\n\nBir değişkenin tipini öğrenmek için:\n\n```python\nyas = 25\nprint(type(yas))  # <class 'int'>\n\nisim = \"Ahmet\"\nprint(type(isim))  # <class 'str'>\n```\n\n## Tip Dönüşümleri\n\nBir veri tipini başka bir tipe çevirebiliriz:\n\n```python\n# String'i Integer'a çevirme\nyas_str = \"25\"\nyas_int = int(yas_str)\nprint(yas_int + 5)  # 30\n\n# Integer'ı String'e çevirme\nsayi = 100\nsayi_str = str(sayi)\nprint(\"Sayı: \" + sayi_str)  # Sayı: 100\n\n# String'i Float'a çevirme\nfiyat_str = \"49.99\"\nfiyat_float = float(fiyat_str)\nprint(fiyat_float)  # 49.99\n```\n\n## String Birleştirme\n\n```python\nisim = \"Ayşe\"\nsoyisim = \"Yılmaz\"\ntam_isim = isim + \" \" + soyisim\nprint(tam_isim)  # Ayşe Yılmaz\n```\n\n## Dikkat!\n\nString ve sayıyı direkt toplayamazsın:\n\n```python\n# ❌ YANLIŞ\nyas = 25\nprint(\"Yaşım \" + yas)  # HATA!\n\n# ✅ DOĞRU\nyas = 25\nprint(\"Yaşım \" + str(yas))  # Yaşım 25\n```"
+      }
+    },
+    {
+      "type": "quiz",
+      "data": {
+        "question": "3.14 sayısının veri tipi nedir?",
+        "options": [
+          "int",
+          "float",
+          "string",
+          "boolean"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "3.14 ondalıklı bir sayıdır, bu yüzden float (floating point) veri tipidir. Tam sayılar int, metinler string'dir.",
+        "xpReward": 10
+      }
+    },
+    {
+      "type": "quiz",
+      "data": {
+        "question": "Bir değişkenin tipini öğrenmek için hangi fonksiyon kullanılır?",
+        "options": [
+          "typeof()",
+          "type()",
+          "gettype()",
+          "datatype()"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Python'da bir değişkenin tipini öğrenmek için type() fonksiyonu kullanılır. Örnek: type(25) → <class 'int'>",
+        "xpReward": 10
+      }
+    },
+    {
+      "type": "code_challenge",
+      "data": {
+        "description": "\"25\" string'ini integer'a çevirip 10 ekleyen kod hangisidir?",
+        "codeExample": "# String'i sayıya çevirme",
+        "options": [
+          "sayi = \"25\" + 10",
+          "sayi = int(\"25\") + 10",
+          "sayi = float(\"25\") + 10",
+          "sayi = str(\"25\") + 10"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "int() fonksiyonu string'i tam sayıya çevirir. int(\"25\") → 25 olur ve 10 eklenince 35 sonucunu verir.",
+        "detailedSolution": "# Tip Dönüşümleri\n\n## Doğru Cevap:\n```python\nsayi = int(\"25\") + 10\nprint(sayi)  # 35\n```\n\n## Açıklama:\n1. `int(\"25\")` → \"25\" string'ini 25 sayısına çevirir\n2. `25 + 10` → 35 sonucunu verir\n\n## Tip Dönüşüm Fonksiyonları:\n- **int()**: String veya float'ı tam sayıya çevirir\n- **float()**: String veya int'i ondalıklı sayıya çevirir\n- **str()**: Sayıyı string'e çevirir\n\n## Yanlış Seçenekler:\n❌ `\"25\" + 10` - String ile sayı toplanamaz, hata verir\n❌ `float(\"25\") + 10` - Çalışır ama 35.0 verir (float)\n❌ `str(\"25\") + 10` - Zaten string, sayı ile toplanamaz\n\n## Örnek:\n```python\n# String toplama\n\"25\" + \"10\" = \"2510\"\n\n# Sayı toplama\n25 + 10 = 35\n```",
+        "xpReward": 30
+      }
+    }
+  ]
+}

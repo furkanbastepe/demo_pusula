@@ -1,0 +1,28 @@
+{
+  "id": "prob_env_010",
+  "title": "Hava Kalitesi İzleme ve Uyarı Sistemi",
+  "description": "Kocaeli'nde hava kalitesini gerçek zamanlı izleyip vatandaşları bilgilendiren bir sistem geliştirmek istiyoruz. Sistem, şehrin farklı noktalarındaki hava kalitesi sensörlerinden veri toplamalı, PM2.5, PM10, CO2 gibi değerleri analiz etmeli ve hava kalitesi kötüleştiğinde vatandaşlara uyarı göndermelidir. Ayrıca, hassas gruplar (astım hastaları, yaşlılar, çocuklar) için özel öneriler sunmalı ve hava kalitesi trendlerini görselleştirmelidir.",
+  "organization": "Kocaeli Büyükşehir Belediyesi",
+  "organizationId": "org_kocaeli_bb_001",
+  "impactArea": "environment",
+  "city": "kocaeli",
+  "requiredSkills": ["IoT", "Veri Analisti", "Mobil Uygulama", "Data Visualization"],
+  "status": "open",
+  "urgencyLevel": 5,
+  "impactScore": 94,
+  "submittedAt": "2025-01-11T09:30:00Z",
+  "deadline": "2025-03-15T23:59:59Z",
+  "attachments": [],
+  "constraints": {
+    "budget": "Çevre ve sağlık bütçesi",
+    "timeline": "2 ay içinde pilot bölge",
+    "technical": "Mevcut hava kalitesi sensörleri ile entegre, push notification"
+  },
+  "engagement": {
+    "views": 289,
+    "saves": 47,
+    "workshopApplications": 21,
+    "activeWorkshops": 2,
+    "submittedSolutions": 0
+  }
+}

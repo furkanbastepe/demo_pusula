@@ -1,0 +1,199 @@
+{
+  "id": "ai-sentiment-analysis",
+  "title": "Müşteri Yorumları Duygu Analizi",
+  "skillPath": "Yapay Zeka Uzmanı",
+  "emoji": "🤖",
+  "context": {
+    "companyName": "OtelRezervasyon.com",
+    "companyType": "Online Otel Rezervasyon Platformu",
+    "industry": "Turizm & Teknoloji",
+    "projectGoal": "Müşteri yorumlarını analiz ederek olumlu/olumsuz duyguları tespit etmek ve otellerin hizmet kalitesini değerlendirmek",
+    "targetAudience": "Otel yöneticileri ve müşteri hizmetleri ekibi",
+    "scenario": "OtelRezervasyon.com'da her gün binlerce müşteri yorumu geliyor. Şirket, bu yorumları manuel okumak yerine yapay zeka ile otomatik analiz etmek istiyor. Sen Python ve doğal dil işleme (NLP) kullanarak bir duygu analizi sistemi geliştireceksin.",
+    "deliverables": [
+      "Python ile veri yükleme scripti",
+      "Duygu analizi modeli",
+      "Sonuçların görselleştirilmesi",
+      "Analiz raporu"
+    ]
+  },
+  "modules": [
+    {
+      "id": "module-1",
+      "order": 1,
+      "title": "Python Temelleri",
+      "description": "Python programlama diline giriş",
+      "xpReward": 60,
+      "estimatedMinutes": 40,
+      "stages": [
+        {
+          "id": "stage-1-1-learn",
+          "order": 1,
+          "type": "learn",
+          "title": "Python Nedir?",
+          "xpReward": 12,
+          "estimatedMinutes": 8,
+          "content": {
+            "type": "learn",
+            "concept": "Python Programlama Dili",
+            "definition": "Python, kolay öğrenilen, güçlü ve çok amaçlı bir programlama dilidir. Yapay zeka, veri bilimi, web geliştirme ve otomasyon için yaygın kullanılır.",
+            "whyImportant": "Python, yapay zeka ve veri bilimi için en popüler dildir. Öğrenmesi kolay, kütüphaneleri zengin ve topluluk desteği güçlüdür. Duygu analizi projemizde Python kullanacağız çünkü NLP (doğal dil işleme) kütüphaneleri çok gelişmiş.",
+            "howItWorks": "Python kodu şu şekilde çalışır:\n\n1. Kod yazılır (.py dosyası)\n2. Python yorumlayıcısı kodu satır satır okur\n3. Komutlar çalıştırılır\n4. Sonuç ekrana yazdırılır\n\nTemel Sözdizimi:\nprint('Merhaba Dünya')  # Ekrana yazdır\nx = 10  # Değişken tanımla\nif x > 5:  # Koşul\n    print('Büyük')  # Girinti önemli!",
+            "examples": [
+              "print('Merhaba Dünya')  # İlk program",
+              "x = 10  # Sayı değişkeni",
+              "name = 'Ahmet'  # Metin değişkeni",
+              "numbers = [1, 2, 3, 4, 5]  # Liste",
+              "if x > 5: print('Büyük')  # Koşul"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-1-1-apply",
+          "order": 2,
+          "type": "apply",
+          "title": "İlk Python Programını Yaz",
+          "xpReward": 20,
+          "estimatedMinutes": 15,
+          "content": {
+            "type": "apply",
+            "task": "Python kurulumunu yap ve ilk programını çalıştır",
+            "deliverable": "Çalışan bir Python scripti",
+            "steps": [
+              "Python'u indir ve kur: python.org/downloads (3.10 veya üzeri)",
+              "Kurulumu test et: Komut satırında 'python --version' yaz",
+              "Yeni klasör oluştur: 'duygu-analizi'",
+              "İçinde 'test.py' dosyası oluştur",
+              "Dosyayı metin editörü ile aç (VS Code önerilir)",
+              "Şu kodu yaz: print('Merhaba, Python!')",
+              "Kaydet ve komut satırında çalıştır: python test.py",
+              "Ekranda 'Merhaba, Python!' yazısını gör"
+            ],
+            "tools": [
+              "Python 3.10+ (python.org)",
+              "VS Code (code.visualstudio.com)",
+              "Komut satırı (Terminal/CMD)"
+            ],
+            "exampleOutput": "Komut satırında şunu görmelisin:\n\n$ python test.py\nMerhaba, Python!\n\nEğer hata alırsan:\n- Python kurulu mu? python --version kontrol et\n- Dosya adı doğru mu? test.py olmalı\n- Doğru klasörde misin? cd komutu ile klasöre git",
+            "commonMistakes": [
+              "Python kurmayı unutmak - python.org'dan indir",
+              "PATH'e eklememeyi unutmak - Kurulumda 'Add to PATH' seçeneğini işaretle",
+              "Dosya uzantısını .txt olarak kaydetmek - .py olmalı",
+              "Girinti hatası - Python'da boşluklar önemli",
+              "Türkçe karakter sorunu - UTF-8 encoding kullan"
+            ],
+            "validationQuestions": [
+              {
+                "question": "Python versiyonunu nasıl kontrol ettin? Hangi versiyon kurulu?",
+                "expectedKeywords": "python --version, 3.10, 3.11, 3.12",
+                "hint": "Komut satırında 'python --version' veya 'python3 --version' yazarak kontrol edebilirsin. 3.10 veya üzeri olmalı."
+              },
+              {
+                "question": "İlk programını çalıştırdığında ne gördün? Ekran çıktısı neydi?",
+                "expectedKeywords": "Merhaba, Python, print, çalıştı",
+                "hint": "Ekranda 'Merhaba, Python!' yazısını görmelisin. Eğer görmediysen, dosya adını ve komutu kontrol et."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "module-2",
+      "order": 2,
+      "title": "Veri İşleme",
+      "description": "Müşteri yorumlarını yükle ve temizle",
+      "xpReward": 70,
+      "estimatedMinutes": 45,
+      "stages": [
+        {
+          "id": "stage-2-1-learn",
+          "order": 3,
+          "type": "learn",
+          "title": "Pandas Kütüphanesi",
+          "xpReward": 15,
+          "estimatedMinutes": 10,
+          "content": {
+            "type": "learn",
+            "concept": "Pandas ile Veri İşleme",
+            "definition": "Pandas, Python'da veri analizi için kullanılan güçlü bir kütüphanedir. Excel gibi tablo formatında veri okuma, temizleme ve analiz etmeyi sağlar.",
+            "whyImportant": "Gerçek dünyada veriler genellikle Excel, CSV veya veritabanlarında saklanır. Pandas, bu verileri Python'a yüklememizi ve işlememizi kolaylaştırır. Otel yorumları projemizde, CSV dosyasındaki yorumları Pandas ile okuyacağız.",
+            "howItWorks": "Pandas kullanımı:\n\nimport pandas as pd  # Kütüphaneyi içe aktar\ndf = pd.read_csv('yorumlar.csv')  # CSV oku\nprint(df.head())  # İlk 5 satırı göster\nprint(df['yorum'])  # Yorum sütunu\ndf_temiz = df.dropna()  # Boş satırları sil",
+            "examples": [
+              "import pandas as pd",
+              "df = pd.read_csv('yorumlar.csv')",
+              "print(df.head())  # İlk 5 satır",
+              "print(df.shape)  # Satır ve sütun sayısı",
+              "print(df['yorum'])  # Yorum sütunu"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-2-1-apply",
+          "order": 4,
+          "type": "apply",
+          "title": "Yorumları Yükle ve İncele",
+          "xpReward": 25,
+          "estimatedMinutes": 20,
+          "content": {
+            "type": "apply",
+            "task": "Otel yorumlarını CSV dosyasından yükle ve temel analiz yap",
+            "deliverable": "Veri yükleme ve analiz scripti",
+            "steps": [
+              "Pandas kütüphanesini kur: pip install pandas",
+              "Örnek CSV dosyası oluştur veya indir (yorumlar.csv)",
+              "Yeni Python dosyası oluştur: veri_yukleme.py",
+              "Pandas'ı içe aktar: import pandas as pd",
+              "CSV'yi oku: df = pd.read_csv('yorumlar.csv')",
+              "İlk 5 satırı yazdır: print(df.head())",
+              "Veri boyutunu yazdır: print(df.shape)",
+              "Sütun isimlerini yazdır: print(df.columns)",
+              "Scripti çalıştır: python veri_yukleme.py"
+            ],
+            "tools": [
+              "Python + Pandas",
+              "CSV dosyası (örnek veri)",
+              "VS Code"
+            ],
+            "exampleOutput": "Çıktı örneği:\n\n   otel_adi                    yorum  puan\n0  Hilton    Harika bir deneyimdi!     5\n1  Marriott  Oda temiz ama servis yavaş  3\n2  Sheraton  Mükemmel konum ve hizmet    5\n\nShape: (100, 3)\nColumns: ['otel_adi', 'yorum', 'puan']",
+            "commonMistakes": [
+              "Pandas kurmayı unutmak - pip install pandas gerekli",
+              "CSV dosyasının yolunu yanlış yazmak - Aynı klasörde olmalı",
+              "Encoding hatası - pd.read_csv('yorumlar.csv', encoding='utf-8')",
+              "Sütun adını yanlış yazmak - Büyük/küçük harf duyarlı"
+            ],
+            "validationQuestions": [
+              {
+                "question": "Pandas'ı nasıl kurdun? Hangi komutu kullandın?",
+                "expectedKeywords": "pip install pandas, pip3",
+                "hint": "Komut satırında 'pip install pandas' veya 'pip3 install pandas' yazmalıydın."
+              },
+              {
+                "question": "CSV dosyasında kaç satır ve kaç sütun var? Nasıl öğrendin?",
+                "expectedKeywords": "shape, satır, sütun, print",
+                "hint": "df.shape komutu (satır, sütun) formatında boyutu verir. Örneğin: (100, 3) = 100 satır, 3 sütun."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "totalXP": 130,
+  "estimatedHours": 1.5,
+  "difficulty": "Çırak",
+  "learningOutcomes": [
+    "Python programlama temelleri",
+    "Pandas ile veri yükleme",
+    "CSV dosyası okuma",
+    "Veri analizi yapabilme"
+  ],
+  "toolsUsed": [
+    "Python 3.10+",
+    "Pandas kütüphanesi",
+    "VS Code",
+    "CSV dosyaları"
+  ]
+}

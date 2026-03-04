@@ -1,0 +1,48 @@
+{
+  "id": "python-basics-2",
+  "courseId": "python-basics",
+  "order": 2,
+  "title": "Değişkenler",
+  "estimatedTime": 25,
+  "xpReward": 80,
+  "sections": [
+    {
+      "type": "content",
+      "data": {
+        "markdown": "# Değişkenler 📦\n\nDeğişkenler, verileri sakladığımız kutular gibidir. İçine bir değer koyar, istediğin zaman kullanırsın!\n\n## Değişken Tanımlama\n\nPython'da değişken tanımlamak çok kolay:\n\n```python\nisim = \"Ahmet\"\nyas = 25\nboy = 1.75\n```\n\n## Değişken İsimlendirme Kuralları\n\n✅ **Doğru:**\n- `isim`, `yas`, `ogrenci_sayisi`\n- Küçük harfle başlar\n- Alt çizgi kullanılabilir\n\n❌ **Yanlış:**\n- `2isim` - Sayı ile başlayamaz\n- `öğrenci-sayısı` - Türkçe karakter ve tire kullanılamaz\n- `print` - Python'un özel kelimelerini kullanma\n\n## Değişken Türleri\n\n```python\n# String (Metin)\nisim = \"Ayşe\"\n\n# Integer (Tam Sayı)\nyas = 20\n\n# Float (Ondalıklı Sayı)\nboy = 1.65\n\n# Boolean (Doğru/Yanlış)\nogrenci_mi = True\n```\n\n## Değişkenleri Kullanma\n\n```python\nisim = \"Mehmet\"\nyas = 22\n\nprint(\"Benim adım\", isim)\nprint(\"Yaşım\", yas)\n```\n\nÇıktı:\n```\nBenim adım Mehmet\nYaşım 22\n```"
+      }
+    },
+    {
+      "type": "quiz",
+      "data": {
+        "question": "Hangi değişken ismi geçerlidir?",
+        "options": [
+          "2isim",
+          "isim-soyisim",
+          "ogrenci_sayisi",
+          "öğrenci sayısı"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "ogrenci_sayisi geçerli bir değişken ismidir. Küçük harfle başlar ve alt çizgi içerir. Sayı ile başlayamaz, tire ve boşluk kullanılamaz.",
+        "xpReward": 15
+      }
+    },
+    {
+      "type": "code_challenge",
+      "data": {
+        "description": "Bir değişkene 100 değerini atayan ve ekrana yazdıran kod hangisidir?",
+        "codeExample": "# Değişken tanımlama ve yazdırma",
+        "options": [
+          "sayi = 100\\nprint(sayi)",
+          "100 = sayi\\nprint(sayi)",
+          "sayi == 100\\nprint(sayi)",
+          "var sayi = 100\\nprint(sayi)"
+        ],
+        "correctAnswerIndex": 0,
+        "explanation": "Python'da değişken tanımlamak için = operatörü kullanılır. sayi = 100 şeklinde tanımlanır ve print(sayi) ile yazdırılır.",
+        "detailedSolution": "# Değişken Tanımlama\n\n## Doğru Cevap:\n```python\nsayi = 100\nprint(sayi)\n```\n\n## Açıklama:\n1. `sayi = 100` → sayi değişkenine 100 değerini atar\n2. `print(sayi)` → sayi değişkeninin değerini ekrana yazar\n\n## Önemli:\n- **=** atama operatörüdür (eşittir değil!)\n- **==** karşılaştırma operatörüdür\n\n## Yanlış Seçenekler:\n❌ `100 = sayi` - Sol taraf değişken olmalı\n❌ `sayi == 100` - Bu karşılaştırma, atama değil\n❌ `var sayi = 100` - Python'da 'var' anahtar kelimesi yok",
+        "xpReward": 30
+      }
+    }
+  ]
+}

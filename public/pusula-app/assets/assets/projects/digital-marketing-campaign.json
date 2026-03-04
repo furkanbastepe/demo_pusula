@@ -1,0 +1,215 @@
+{
+  "id": "digital-marketing-campaign",
+  "title": "Sosyal Medya Kampanyası",
+  "skillPath": "Dijital Pazarlama Uzmanı",
+  "emoji": "📱",
+  "context": {
+    "companyName": "ModaBoutique E-ticaret",
+    "companyType": "Online Moda Mağazası",
+    "industry": "E-Ticaret & Moda",
+    "projectGoal": "Yeni sezon koleksiyonu için Instagram ve Facebook'ta etkili bir sosyal medya kampanyası oluşturmak",
+    "targetAudience": "18-35 yaş arası kadınlar, moda takipçileri",
+    "scenario": "ModaBoutique, yeni bahar koleksiyonunu tanıtmak istiyor. 2 haftalık bir sosyal medya kampanyası planlıyorlar. Sen bu kampanyanın hedef kitle analizini yapacak, içerik takvimi oluşturacak, görseller tasarlayacak ve performans metriklerini takip edeceksin.",
+    "deliverables": [
+      "Hedef kitle analiz raporu",
+      "14 günlük içerik takvimi",
+      "5 sosyal medya görseli",
+      "Performans takip tablosu"
+    ]
+  },
+  "modules": [
+    {
+      "id": "module-1",
+      "order": 1,
+      "title": "Hedef Kitle Analizi",
+      "description": "Kampanyanın hedef kitlesini tanımla ve analiz et",
+      "xpReward": 70,
+      "estimatedMinutes": 45,
+      "stages": [
+        {
+          "id": "stage-1-1-learn",
+          "order": 1,
+          "type": "learn",
+          "title": "Hedef Kitle Nedir?",
+          "xpReward": 15,
+          "estimatedMinutes": 10,
+          "content": {
+            "type": "learn",
+            "concept": "Hedef Kitle Analizi",
+            "definition": "Hedef kitle, ürün veya hizmetinizi satın alma potansiyeli en yüksek olan kişi grubudur. Yaş, cinsiyet, ilgi alanları, gelir düzeyi gibi demografik ve psikografik özelliklerle tanımlanır.",
+            "whyImportant": "Herkese hitap etmeye çalışan kampanyalar başarısız olur. Hedef kitleyi iyi tanımak, doğru mesajı, doğru kişilere, doğru zamanda ulaştırmanızı sağlar. ModaBoutique için 18-35 yaş kadınları hedefliyoruz çünkü moda takipçisi ve online alışveriş yapan bu grup.",
+            "howItWorks": "Hedef kitle analizi 4 adımda yapılır:\n\n1. Demografik Özellikler: Yaş, cinsiyet, konum, gelir\n2. Psikografik Özellikler: İlgi alanları, değerler, yaşam tarzı\n3. Davranışsal Özellikler: Alışveriş alışkanlıkları, sosyal medya kullanımı\n4. Persona Oluşturma: Örnek müşteri profili\n\nÖrnek Persona:\nAyşe, 28, İstanbul\nDijital pazarlama uzmanı\nInstagram'da aktif, moda blogları takip eder\nAyda 2-3 kez online alışveriş yapar\nSürdürülebilir moda önemser",
+            "examples": [
+              "Yaş Aralığı: 18-35 (genç yetişkinler)",
+              "Cinsiyet: %90 kadın, %10 erkek",
+              "Konum: Büyükşehirler (İstanbul, Ankara, İzmir)",
+              "Gelir: Orta-üst gelir grubu",
+              "İlgi Alanları: Moda, güzellik, seyahat, lifestyle",
+              "Sosyal Medya: Instagram ve Pinterest aktif kullanıcıları",
+              "Alışveriş: Online alışverişe alışkın, mobil ödeme kullanır"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-1-1-apply",
+          "order": 2,
+          "type": "apply",
+          "title": "Hedef Kitle Raporu Hazırla",
+          "xpReward": 25,
+          "estimatedMinutes": 20,
+          "content": {
+            "type": "apply",
+            "task": "ModaBoutique için detaylı hedef kitle analizi yap ve rapor oluştur",
+            "deliverable": "Word/Google Docs'ta hedef kitle analiz raporu",
+            "steps": [
+              "Yeni bir Word veya Google Docs dokümanı aç",
+              "Başlık: 'ModaBoutique Bahar Koleksiyonu - Hedef Kitle Analizi'",
+              "Demografik Özellikler bölümü yaz: Yaş, cinsiyet, konum, gelir",
+              "Psikografik Özellikler bölümü yaz: İlgi alanları, değerler, yaşam tarzı",
+              "Davranışsal Özellikler bölümü yaz: Alışveriş sıklığı, sosyal medya kullanımı",
+              "2 farklı persona oluştur (örnek müşteri profilleri)",
+              "Her persona için: İsim, yaş, meslek, alışkanlıklar, motivasyonlar",
+              "Kampanya önerileri ekle: Bu kitleye nasıl ulaşılır?",
+              "Dosyayı kaydet: 'hedef-kitle-analizi.docx'"
+            ],
+            "tools": [
+              "Microsoft Word veya Google Docs",
+              "Canva (görsel eklemek için - opsiyonel)",
+              "Instagram Insights (gerçek veri için - opsiyonel)"
+            ],
+            "exampleOutput": "Rapor şu bölümleri içermeli:\n\n1. Demografik Profil\n   - Yaş: 18-35\n   - Cinsiyet: %90 kadın\n   - Konum: İstanbul, Ankara, İzmir\n   - Gelir: 15.000-40.000 TL/ay\n\n2. Psikografik Profil\n   - Moda ve trendleri takip eder\n   - Sosyal medyada aktif\n   - Sürdürülebilirlik önemser\n   - Kaliteye önem verir\n\n3. Persona 1: Ayşe (28)\n   - Dijital pazarlama uzmanı\n   - Instagram'da günde 2 saat\n   - Ayda 3-4 kez online alışveriş\n   - Motivasyon: Trend olmak, özgün görünmek\n\n4. Persona 2: Zeynep (24)\n   - Üniversite öğrencisi\n   - TikTok ve Instagram kullanıcısı\n   - Bütçe dostu ürünler arar\n   - Motivasyon: Arkadaşları gibi giyinmek\n\n5. Kampanya Önerileri\n   - Instagram Reels ve Stories kullan\n   - Influencer işbirlikleri\n   - %20 indirim kodu\n   - Ücretsiz kargo",
+            "commonMistakes": [
+              "Çok geniş hedef kitle tanımlamak - '18-65 yaş herkes' çok geniş",
+              "Sadece demografik özelliklere odaklanmak - Psikografik özellikler de önemli",
+              "Gerçekçi olmayan persona - 'Herkes her gün alışveriş yapar' yanlış",
+              "Rakip analizi yapmamak - Rakipler kimi hedefliyor?",
+              "Veri kullanmamak - Tahmin yerine gerçek veriler kullan"
+            ],
+            "validationQuestions": [
+              {
+                "question": "Hedef kitlenin yaş aralığını nasıl belirledin? Neden 18-35?",
+                "expectedKeywords": "genç, yetişkin, moda, online alışveriş, sosyal medya",
+                "hint": "18-35 yaş grubu sosyal medyada en aktif, online alışverişe alışkın ve moda trendlerini takip eden gruptur."
+              },
+              {
+                "question": "Kaç persona oluşturdun? Her birinin temel özelliklerini anlat.",
+                "expectedKeywords": "2, persona, Ayşe, Zeynep, yaş, meslek, alışkanlık",
+                "hint": "2 farklı persona oluşturmalıydın. Her biri farklı yaş, meslek ve alışveriş alışkanlıklarına sahip olmalı."
+              },
+              {
+                "question": "Bu hedef kitleye ulaşmak için hangi sosyal medya platformlarını önerdin?",
+                "expectedKeywords": "Instagram, Facebook, TikTok, Reels, Stories",
+                "hint": "18-35 yaş kadınlar Instagram ve TikTok'ta çok aktif. Reels ve Stories formatları en etkili içerik türleri."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "module-2",
+      "order": 2,
+      "title": "İçerik Planlama",
+      "description": "14 günlük sosyal medya içerik takvimi oluştur",
+      "xpReward": 80,
+      "estimatedMinutes": 50,
+      "stages": [
+        {
+          "id": "stage-2-1-learn",
+          "order": 3,
+          "type": "learn",
+          "title": "İçerik Takvimi Nedir?",
+          "xpReward": 15,
+          "estimatedMinutes": 12,
+          "content": {
+            "type": "learn",
+            "concept": "Sosyal Medya İçerik Takvimi",
+            "definition": "İçerik takvimi, sosyal medyada ne zaman, hangi platformda, ne tür içerik paylaşılacağını gösteren plandır. Tarih, saat, platform, içerik türü, metin ve görselleri içerir.",
+            "whyImportant": "Plansız paylaşım başarısız kampanyalara yol açar. İçerik takvimi, tutarlı ve stratejik paylaşım yapmanızı sağlar. ModaBoutique kampanyasında 14 gün boyunca her gün ne paylaşacağımızı önceden planlayacağız. Bu, son dakika stresini önler ve kaliteli içerik üretmeyi sağlar.",
+            "howItWorks": "İçerik takvimi şu bilgileri içerir:\n\n1. Tarih ve Saat: Ne zaman paylaşılacak?\n2. Platform: Instagram, Facebook, TikTok?\n3. İçerik Türü: Fotoğraf, video, Reels, Stories?\n4. Konu: Ne hakkında? (ürün tanıtımı, kullanıcı yorumu, indirim)\n5. Metin: Caption (açıklama metni)\n6. Hashtag'ler: #moda #bahar #yenikoleksiyon\n7. Görseller: Hangi fotoğraf/video kullanılacak?\n8. CTA: Harekete geçirici mesaj (Şimdi Al, Linke Tıkla)\n\nİçerik Türleri:\n- Ürün tanıtımı (%40)\n- Kullanıcı içeriği (%20)\n- Eğitici içerik (%20)\n- Eğlenceli içerik (%20)",
+            "examples": [
+              "1. Gün: Instagram Post - Yeni koleksiyon duyurusu + teaser video",
+              "2. Gün: Instagram Stories - Ürün detayları + swipe up link",
+              "3. Gün: Facebook Post - Müşteri yorumu + fotoğraf",
+              "4. Gün: Instagram Reels - Kombin önerileri + trending müzik",
+              "5. Gün: Instagram Post - %20 indirim kodu duyurusu",
+              "Hashtag örneği: #ModaBoutique #BaharKoleksiyonu #YeniSezon #Moda2024"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-2-1-apply",
+          "order": 4,
+          "type": "apply",
+          "title": "14 Günlük İçerik Takvimi Oluştur",
+          "xpReward": 30,
+          "estimatedMinutes": 25,
+          "content": {
+            "type": "apply",
+            "task": "ModaBoutique bahar kampanyası için 14 günlük detaylı içerik takvimi hazırla",
+            "deliverable": "Excel/Google Sheets'te içerik takvimi",
+            "steps": [
+              "Excel veya Google Sheets aç",
+              "Sütunlar oluştur: Tarih, Saat, Platform, İçerik Türü, Konu, Metin, Hashtag, Görsel, CTA",
+              "14 satır ekle (14 gün için)",
+              "Her gün için içerik planla: Çeşitlilik önemli (post, stories, reels)",
+              "İlk 3 gün: Koleksiyon tanıtımı ve heyecan yaratma",
+              "4-10. günler: Ürün detayları, kombin önerileri, müşteri yorumları",
+              "11-14. günler: İndirim kampanyası ve satış odaklı içerik",
+              "Her içerik için caption (50-100 kelime) yaz",
+              "5-10 hashtag ekle (popüler + marka hashtag'leri)",
+              "Dosyayı kaydet: 'icerik-takvimi.xlsx'"
+            ],
+            "tools": [
+              "Microsoft Excel veya Google Sheets",
+              "Hashtag araştırma: hashtagify.me, all-hashtag.com",
+              "İçerik fikirleri: Instagram Explore, rakip analizi"
+            ],
+            "exampleOutput": "Takvim örneği:\n\nGün 1 (Pazartesi 10:00)\nPlatform: Instagram Post\nKonu: Yeni koleksiyon duyurusu\nMetin: 'Bahar geldi, yeni koleksiyonumuz da! 🌸 Renkli, şık ve rahat parçalarla tanışmaya hazır mısınız? Linkteki tüm ürünleri keşfedin! #ModaBoutique #BaharKoleksiyonu'\nHashtag: #moda #bahar #yenikoleksiyon #fashion #spring\nGörsel: Koleksiyon teaser video\nCTA: Linke tıkla\n\nGün 2 (Salı 14:00)\nPlatform: Instagram Stories\nKonu: Ürün detayları\nMetin: 'Bu elbiseyi gördünüz mü? 😍 Swipe up ile hemen sipariş ver!'\nHashtag: -\nGörsel: Elbise detay fotoğrafı\nCTA: Swipe up\n\n... (14 güne kadar devam)",
+            "commonMistakes": [
+              "Her gün aynı içerik türü - Çeşitlilik önemli (post, stories, reels karışık)",
+              "Çok fazla satış odaklı içerik - %80 değer, %20 satış kuralı",
+              "Hashtag'leri rastgele seçmek - Popüler + niche hashtag karışımı kullan",
+              "Paylaşım saatini önemsememek - Hedef kitle en aktif olduğu saatlerde paylaş",
+              "CTA (harekete geçirici mesaj) koymamak - Her içerikte net bir CTA olmalı"
+            ],
+            "validationQuestions": [
+              {
+                "question": "14 günlük takvimde kaç farklı içerik türü kullandın? Örnekler ver.",
+                "expectedKeywords": "post, stories, reels, video, fotoğraf, çeşitlilik",
+                "hint": "En az 3 farklı içerik türü kullanmalıydın: Instagram Post, Stories, Reels. Çeşitlilik engagement'ı artırır."
+              },
+              {
+                "question": "İlk 3 gün hangi stratejiye odaklandın? Neden?",
+                "expectedKeywords": "duyuru, heyecan, teaser, tanıtım, farkındalık",
+                "hint": "İlk 3 gün koleksiyon duyurusu ve heyecan yaratmaya odaklanmalıydın. Henüz satış değil, farkındalık aşaması."
+              },
+              {
+                "question": "Hashtag'leri nasıl seçtin? Kaç tane kullandın?",
+                "expectedKeywords": "5-10, popüler, niche, marka, araştırma",
+                "hint": "5-10 hashtag kullanmalıydın. Popüler hashtag'ler (#moda) + niche hashtag'ler (#baharkoleksiyonu) + marka hashtag'i (#ModaBoutique) karışımı."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "totalXP": 150,
+  "estimatedHours": 2,
+  "difficulty": "Çırak",
+  "learningOutcomes": [
+    "Hedef kitle analizi yapabilme",
+    "Persona oluşturabilme",
+    "İçerik takvimi hazırlayabilme",
+    "Sosyal medya stratejisi geliştirebilme"
+  ],
+  "toolsUsed": [
+    "Microsoft Word/Google Docs",
+    "Microsoft Excel/Google Sheets",
+    "Canva (opsiyonel)",
+    "Hashtag araştırma araçları"
+  ]
+}

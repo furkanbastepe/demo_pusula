@@ -1,0 +1,207 @@
+{
+  "id": "data-analyst-restaurant",
+  "title": "Restoran Satış Analizi",
+  "skillPath": "Veri Analisti",
+  "emoji": "📊",
+  "context": {
+    "companyName": "Lezzet Durağı Restoranı",
+    "companyType": "Yerel Restoran Zinciri",
+    "industry": "Yiyecek & İçecek",
+    "projectGoal": "Satış verilerini analiz ederek hangi yemeklerin popüler olduğunu, hangi günlerin yoğun olduğunu ve gelir trendlerini belirlemek",
+    "targetAudience": "Restoran sahibi ve yönetim ekibi",
+    "scenario": "Lezzet Durağı'nın 3 şubesi var ve son 6 aydır satış verileri toplanıyor. Restoran sahibi, hangi yemeklerin daha çok satıldığını, hangi günlerin daha kârlı olduğunu ve müşteri memnuniyetini anlamak istiyor. Sen bu verileri analiz edecek ve restoran için bir satış raporu hazırlayacaksın.",
+    "deliverables": [
+      "SQL sorguları ile veri analizi",
+      "Excel'de satış dashboard'u",
+      "En çok satan ürünler raporu",
+      "Günlük satış trendleri grafiği"
+    ]
+  },
+  "modules": [
+    {
+      "id": "module-1",
+      "order": 1,
+      "title": "Veri Toplama",
+      "description": "SQL ile veritabanından veri çekmeyi öğren",
+      "xpReward": 100,
+      "estimatedMinutes": 60,
+      "stages": [
+        {
+          "id": "stage-1-1-learn",
+          "order": 1,
+          "type": "learn",
+          "title": "SELECT Komutu Nedir?",
+          "xpReward": 20,
+          "estimatedMinutes": 15,
+          "content": {
+            "type": "learn",
+            "concept": "SELECT Komutu",
+            "definition": "SELECT, SQL'de veritabanından veri çekmek için kullanılan temel komuttur. Bir tablodaki tüm verileri veya belirli sütunları seçmemizi sağlar.",
+            "whyImportant": "Veri analizi yapmak için önce verilere erişmemiz gerekir. SELECT komutu, veritabanındaki milyonlarca satır arasından ihtiyacımız olan verileri çekmemizi sağlar. Restoran projemizde, sipariş verilerini görmek için SELECT kullanacağız. Bu, her veri analistinin bilmesi gereken ilk ve en önemli komuttur.",
+            "howItWorks": "SELECT komutu şu yapıda çalışır:\n\n1. SELECT: Hangi sütunları istediğimizi belirtiriz (* = tümü)\n2. FROM: Hangi tablodan veri çekeceğimizi söyleriz\n3. Sonuç: Veritabanı istediğimiz verileri tablo halinde getirir\n\nTemel Yapı:\nSELECT sütun_adı FROM tablo_adı;\n\nÖrnek:\nSELECT * FROM siparisler;\nBu komut 'siparisler' tablosundaki TÜM sütunları getirir.",
+            "examples": [
+              "SELECT * FROM siparisler; -- Tüm sütunları getir",
+              "SELECT urun_adi, fiyat FROM siparisler; -- Sadece ürün adı ve fiyat",
+              "SELECT COUNT(*) FROM siparisler; -- Toplam sipariş sayısı",
+              "SELECT DISTINCT sube FROM siparisler; -- Benzersiz şube isimleri"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-1-1-apply",
+          "order": 2,
+          "type": "apply",
+          "title": "Tüm Siparişleri Çek",
+          "xpReward": 30,
+          "estimatedMinutes": 25,
+          "content": {
+            "type": "apply",
+            "task": "Lezzet Durağı'nın 'siparisler' tablosundan tüm verileri çek ve incele",
+            "deliverable": "SELECT * FROM siparisler sorgusunu çalıştır ve sonuçları analiz et",
+            "steps": [
+              "Bilgisayarında bir SQL editörü aç (SQLite Browser öneriyoruz - ücretsiz ve kolay)",
+              "Eğer yoksa, online SQL editörü kullan: sql-online.com veya sqliteonline.com",
+              "Yeni bir sorgu penceresi oluştur (New Query veya SQL tab)",
+              "SELECT * FROM siparisler; komutunu yaz (noktalı virgülü unutma!)",
+              "Sorguyu çalıştır (Run, Execute veya F5 tuşuna bas)",
+              "Sonuçları incele: Kaç satır var? Hangi sütunlar var? Veriler mantıklı mı?",
+              "En az 3 farklı ürün adı not al",
+              "Ekran görüntüsü al (opsiyonel ama önerilir)"
+            ],
+            "tools": [
+              "SQLite Browser (DB Browser for SQLite) - Ücretsiz, Windows/Mac/Linux",
+              "Online SQL Editörü - sql-online.com (kurulum gerektirmez)",
+              "DBeaver - Profesyonel, ücretsiz, çok veritabanı desteği"
+            ],
+            "exampleOutput": "Sorgu sonucunda şu sütunları görmelisin:\n\n- siparis_id: Sipariş numarası (1, 2, 3...)\n- urun_adi: Yemek adı (Adana Kebap, Lahmacun, vb.)\n- fiyat: Ürün fiyatı (85.00, 45.00, vb.)\n- tarih: Sipariş tarihi (2024-01-15)\n- sube: Şube adı (Merkez, Kadıköy, Beşiktaş)\n- musteri_puani: 1-5 arası puan\n\nÖrnek satır:\n1 | Adana Kebap | 85.00 | 2024-01-15 | Merkez | 5\n\nToplam ~500-1000 satır görmelisin.",
+            "commonMistakes": [
+              "FROM yerine FORM yazmak - Dikkat: FROM (İngilizce 'dan' anlamında)",
+              "Tablo adını yanlış yazmak - Tam olarak 'siparisler' yazmalısın",
+              "Noktalı virgül (;) koymayı unutmak - SQL komutları ; ile biter",
+              "SELECT ve FROM arasına virgül koymak - Yanlış: SELECT, FROM",
+              "Türkçe karakter sorunu - Eğer hata alırsan, veritabanı encoding'ini kontrol et"
+            ],
+            "validationQuestions": [
+              {
+                "question": "Hangi SQL komutunu kullandın? Tam olarak yaz.",
+                "expectedKeywords": "SELECT, FROM, siparisler, *",
+                "hint": "SELECT * FROM siparisler; komutunu kullanmalıydın. * işareti 'tüm sütunlar' anlamına gelir."
+              },
+              {
+                "question": "Sorgu kaç satır döndürdü? Ve hangi sütunları gördün?",
+                "expectedKeywords": "satır, sütun, siparis_id, urun_adi, fiyat, tarih",
+                "hint": "Sorgu sonucunda alt kısımda '500 rows' gibi bir bilgi görmelisin. Sütunlar: siparis_id, urun_adi, fiyat, tarih, sube, musteri_puani"
+              },
+              {
+                "question": "En pahalı ürünün fiyatı ne kadardı? (Yaklaşık)",
+                "expectedKeywords": "fiyat, TL, lira",
+                "hint": "Fiyat sütununa bakarak en yüksek değeri bulabilirsin. Genellikle 100-150 TL arası olmalı."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "module-2",
+      "order": 2,
+      "title": "Veri Filtreleme",
+      "description": "WHERE komutu ile istediğin verileri bul",
+      "xpReward": 120,
+      "estimatedMinutes": 70,
+      "stages": [
+        {
+          "id": "stage-2-1-learn",
+          "order": 3,
+          "type": "learn",
+          "title": "WHERE Komutu ile Filtreleme",
+          "xpReward": 25,
+          "estimatedMinutes": 20,
+          "content": {
+            "type": "learn",
+            "concept": "WHERE Komutu",
+            "definition": "WHERE, SQL'de belirli koşullara uyan verileri filtrelemek için kullanılır. Milyonlarca satır arasından sadece istediğimiz verileri seçmemizi sağlar.",
+            "whyImportant": "Gerçek dünyada veritabanları çok büyüktür. Tüm verileri çekmek yerine, sadece ihtiyacımız olanları filtrelemek hem hızlıdır hem de anlamlıdır. Örneğin, Lezzet Durağı'nda sadece 'Adana Kebap' siparişlerini veya sadece 100 TL üzeri siparişleri görmek isteyebiliriz. WHERE komutu bunu mümkün kılar.",
+            "howItWorks": "WHERE komutu SELECT ve FROM'dan sonra gelir:\n\nSELECT sütunlar\nFROM tablo\nWHERE koşul;\n\nKoşul Operatörleri:\n= : Eşittir (WHERE fiyat = 85)\n> : Büyüktür (WHERE fiyat > 100)\n< : Küçüktür (WHERE fiyat < 50)\n>= : Büyük eşittir\n<= : Küçük eşittir\n!= veya <> : Eşit değildir\n\nMetin için tek tırnak kullan:\nWHERE urun_adi = 'Adana Kebap'",
+            "examples": [
+              "SELECT * FROM siparisler WHERE fiyat > 100; -- 100 TL üzeri siparişler",
+              "SELECT * FROM siparisler WHERE urun_adi = 'Adana Kebap'; -- Sadece Adana Kebap",
+              "SELECT * FROM siparisler WHERE sube = 'Merkez'; -- Merkez şubesi siparişleri",
+              "SELECT * FROM siparisler WHERE musteri_puani = 5; -- 5 yıldız alan siparişler",
+              "SELECT urun_adi, fiyat FROM siparisler WHERE fiyat >= 80 AND fiyat <= 100; -- 80-100 TL arası"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-2-1-apply",
+          "order": 4,
+          "type": "apply",
+          "title": "Pahalı Siparişleri Filtrele",
+          "xpReward": 35,
+          "estimatedMinutes": 30,
+          "content": {
+            "type": "apply",
+            "task": "100 TL ve üzeri siparişleri bul ve analiz et",
+            "deliverable": "WHERE komutu ile filtrelenmiş sorgu sonuçları",
+            "steps": [
+              "SQL editörünü aç",
+              "Önce tüm siparişleri çek: SELECT * FROM siparisler;",
+              "Şimdi sadece 100 TL üzeri olanları filtrele: SELECT * FROM siparisler WHERE fiyat >= 100;",
+              "Sorguyu çalıştır ve sonuçları incele",
+              "Kaç sipariş 100 TL üzeri? (Satır sayısına bak)",
+              "En pahalı ürün hangisi? (Fiyat sütununu incele)",
+              "Hangi şubede daha çok pahalı sipariş var? (Sube sütununu incele)",
+              "Şimdi sadece 'Adana Kebap' siparişlerini filtrele: SELECT * FROM siparisler WHERE urun_adi = 'Adana Kebap';",
+              "Her iki sorgunun sonuçlarını karşılaştır"
+            ],
+            "tools": [
+              "SQLite Browser veya online SQL editörü",
+              "Not defteri (sonuçları kaydetmek için)",
+              "Hesap makinesi (ortalama hesaplamak için)"
+            ],
+            "exampleOutput": "İlk sorgu (fiyat >= 100):\n- Yaklaşık 150-200 satır dönmeli\n- En pahalı ürünler: Karışık Izgara (150 TL), Dana Bonfile (140 TL)\n- Merkez şubesi daha çok pahalı sipariş alıyor\n\nİkinci sorgu (Adana Kebap):\n- Yaklaşık 80-100 satır\n- Fiyat: 85 TL\n- Her üç şubede de popüler\n\nÖnemli Gözlem: Pahalı ürünler genellikle et ürünleri (kebap, ızgara)",
+            "commonMistakes": [
+              "Metin için çift tırnak kullanmak - Yanlış: WHERE urun_adi = \"Adana\" | Doğru: WHERE urun_adi = 'Adana Kebap'",
+              "Türkçe karakter hatası - 'Adana Kebap' yazarken tam olarak veritabanındaki gibi yaz",
+              "Büyük/küçük harf duyarlılığı - Bazı veritabanlarında 'adana kebap' ile 'Adana Kebap' farklıdır",
+              "Operatör hatası - >= yerine => yazmak (doğrusu: >=)",
+              "WHERE'i unutmak - SELECT * FROM siparisler fiyat > 100 YANLIŞ! WHERE ekle"
+            ],
+            "validationQuestions": [
+              {
+                "question": "100 TL ve üzeri kaç sipariş var? Hangi sorguyu kullandın?",
+                "expectedKeywords": "WHERE, fiyat, >=, 100",
+                "hint": "SELECT * FROM siparisler WHERE fiyat >= 100; sorgusunu kullanmalıydın. Sonuç satır sayısını say."
+              },
+              {
+                "question": "Sadece 'Adana Kebap' siparişlerini nasıl filtredin? Sorguyu yaz.",
+                "expectedKeywords": "WHERE, urun_adi, =, Adana Kebap",
+                "hint": "SELECT * FROM siparisler WHERE urun_adi = 'Adana Kebap'; - Tek tırnak kullanmayı unutma!"
+              },
+              {
+                "question": "Hangi şubede daha çok pahalı sipariş var? Nasıl anladın?",
+                "expectedKeywords": "sube, Merkez, Kadıköy, Beşiktaş, sayı",
+                "hint": "Sorgu sonuçlarında 'sube' sütununa bakarak hangi şubenin daha çok geçtiğini sayabilirsin."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "totalXP": 220,
+  "estimatedHours": 3,
+  "difficulty": "Çırak",
+  "learningOutcomes": [
+    "SQL SELECT komutunu kullanabilme",
+    "WHERE ile veri filtreleme",
+    "Veri analizi yapabilme",
+    "Sonuçları yorumlayabilme"
+  ],
+  "toolsUsed": [
+    "SQL (SQLite/MySQL)",
+    "SQL editörü (SQLite Browser, DBeaver, online editör)"
+  ]
+}

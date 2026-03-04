@@ -1,0 +1,63 @@
+{
+  "id": "python-basics-1",
+  "courseId": "python-basics",
+  "order": 1,
+  "title": "Python'a Giriş",
+  "estimatedTime": 20,
+  "xpReward": 60,
+  "sections": [
+    {
+      "type": "content",
+      "data": {
+        "markdown": "# Python'a Hoş Geldin! 🐍\n\nPython, öğrenmesi en kolay programlama dillerinden biridir. Veri analizi, yapay zeka, web geliştirme ve daha fazlası için kullanılır!\n\n## Neden Python?\n\n- 📖 **Kolay Okunur**: İngilizce gibi yazılır\n- 🚀 **Güçlü**: Büyük projeler yapabilirsin\n- 🌍 **Popüler**: Dünyada en çok kullanılan dillerden biri\n- 💼 **İş İmkanı**: Çok fazla iş fırsatı var\n\n## İlk Programın: print()\n\nPython'da ekrana yazı yazdırmak için `print()` fonksiyonunu kullanırız:\n\n```python\nprint(\"Merhaba Dünya!\")\n```\n\nBu kod çalıştırıldığında ekrana şunu yazar:\n```\nMerhaba Dünya!\n```\n\n## Yorumlar\n\nKodlarına not eklemek için `#` işaretini kullanırsın:\n\n```python\n# Bu bir yorumdur, çalıştırılmaz\nprint(\"Bu çalışır\")  # Satır sonunda da yorum yazabilirsin\n```\n\n## Sayılarla İşlemler\n\nPython bir hesap makinesi gibi de kullanılabilir:\n\n```python\nprint(5 + 3)   # Toplama: 8\nprint(10 - 4)  # Çıkarma: 6\nprint(6 * 7)   # Çarpma: 42\nprint(15 / 3)  # Bölme: 5.0\n```"
+      }
+    },
+    {
+      "type": "quiz",
+      "data": {
+        "question": "Python'da ekrana yazı yazdırmak için hangi fonksiyon kullanılır?",
+        "options": [
+          "write()",
+          "print()",
+          "echo()",
+          "display()"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Python'da ekrana yazı yazdırmak için print() fonksiyonu kullanılır. Örnek: print('Merhaba')",
+        "xpReward": 10
+      }
+    },
+    {
+      "type": "quiz",
+      "data": {
+        "question": "Python'da yorum satırı yazmak için hangi işaret kullanılır?",
+        "options": [
+          "//",
+          "#",
+          "/*",
+          "--"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Python'da yorum satırları # işareti ile başlar. Örnek: # Bu bir yorumdur",
+        "xpReward": 10
+      }
+    },
+    {
+      "type": "code_challenge",
+      "data": {
+        "description": "Ekrana \"Python öğreniyorum!\" yazdıran kod hangisidir?",
+        "codeExample": "# Ekrana metin yazdırma",
+        "options": [
+          "print(Python öğreniyorum!)",
+          "print('Python öğreniyorum!')",
+          "write('Python öğreniyorum!')",
+          "echo 'Python öğreniyorum!'"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Python'da metin yazdırmak için print() fonksiyonu kullanılır ve metin tek veya çift tırnak içinde yazılır.",
+        "detailedSolution": "# print() Fonksiyonu\n\n## Doğru Cevap:\n```python\nprint('Python öğreniyorum!')\n```\n\n## Kurallar:\n1. **print()** fonksiyonu kullanılır\n2. Metin **tek tırnak** ' ' veya **çift tırnak** \" \" içinde yazılır\n3. Parantezler zorunludur\n\n## Alternatif Doğru Yazımlar:\n```python\nprint('Python öğreniyorum!')  # Tek tırnak\nprint(\"Python öğreniyorum!\")  # Çift tırnak\n```\n\n## Yanlış Seçenekler:\n❌ `print(Python öğreniyorum!)` - Tırnak yok, hata verir\n❌ `write('Python öğreniyorum!')` - Python'da write() yok\n❌ `echo 'Python öğreniyorum!'` - echo bash komutu, Python değil",
+        "xpReward": 30
+      }
+    }
+  ]
+}

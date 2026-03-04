@@ -1,0 +1,215 @@
+{
+  "id": "ecommerce-handcrafts-store",
+  "title": "El Sanatları Mağazası",
+  "skillPath": "E-Ticaret Uzmanı",
+  "emoji": "🛍️",
+  "context": {
+    "companyName": "ElSanatları E-ticaret",
+    "companyType": "Online El Yapımı Ürünler Mağazası",
+    "industry": "E-Ticaret & El Sanatları",
+    "projectGoal": "El yapımı ürünler için online mağaza kurmak ve ürün yönetimi sistemini oluşturmak",
+    "targetAudience": "El yapımı ürün severler, hediye arayanlar (25-50 yaş)",
+    "scenario": "Yerel zanaatkarlar, el yapımı ürünlerini online satmak istiyor. Sen onlar için bir e-ticaret mağazası kuracak, ürün kataloğu oluşturacak, fiyatlandırma yapacak ve stok yönetimi sistemi geliştireceksin.",
+    "deliverables": [
+      "Ürün kataloğu (Excel)",
+      "Fiyatlandırma stratejisi",
+      "Stok takip sistemi",
+      "Satış analiz raporu"
+    ]
+  },
+  "modules": [
+    {
+      "id": "module-1",
+      "order": 1,
+      "title": "Ürün Kataloğu",
+      "description": "Ürünleri kategorize et ve katalog oluştur",
+      "xpReward": 60,
+      "estimatedMinutes": 40,
+      "stages": [
+        {
+          "id": "stage-1-1-learn",
+          "order": 1,
+          "type": "learn",
+          "title": "E-Ticaret Ürün Kataloğu",
+          "xpReward": 12,
+          "estimatedMinutes": 10,
+          "content": {
+            "type": "learn",
+            "concept": "Ürün Kataloğu ve Kategorizasyon",
+            "definition": "Ürün kataloğu, e-ticaret sitesindeki tüm ürünlerin organize edilmiş listesidir. Her ürün için ad, kategori, fiyat, stok, açıklama ve görseller bulunur.",
+            "whyImportant": "İyi organize edilmiş katalog, müşterilerin ürünleri kolayca bulmasını sağlar. Kategoriler, filtreleme ve arama için kritiktir. ElSanatları mağazasında, ürünleri kategorilere ayırarak (takı, ev dekorasyonu, aksesuar) müşteri deneyimini iyileştireceğiz.",
+            "howItWorks": "Ürün kataloğu şu bilgileri içerir:\n\n1. Ürün Bilgileri:\n   - SKU (Stok Kodu): Benzersiz ürün numarası\n   - Ürün Adı: Açıklayıcı ve SEO dostu\n   - Kategori: Ana kategori ve alt kategori\n   - Açıklama: Detaylı ürün bilgisi\n\n2. Fiyat Bilgileri:\n   - Maliyet: Üretim/alış fiyatı\n   - Satış Fiyatı: Müşteriye satış fiyatı\n   - İndirimli Fiyat: Kampanya fiyatı (opsiyonel)\n\n3. Stok Bilgileri:\n   - Stok Miktarı: Kaç adet var?\n   - Minimum Stok: Uyarı seviyesi\n   - Durum: Stokta/Tükendi\n\n4. Görseller:\n   - Ana görsel: Ürün fotoğrafı\n   - Ek görseller: Farklı açılar",
+            "examples": [
+              "SKU: ELS-TKI-001",
+              "Ürün Adı: El Yapımı Gümüş Kolye - Doğal Taş",
+              "Kategori: Takı > Kolyeler",
+              "Maliyet: 150₺",
+              "Satış Fiyatı: 299₺",
+              "Stok: 15 adet",
+              "Durum: Stokta"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-1-1-apply",
+          "order": 2,
+          "type": "apply",
+          "title": "Ürün Kataloğu Oluştur",
+          "xpReward": 20,
+          "estimatedMinutes": 18,
+          "content": {
+            "type": "apply",
+            "task": "Excel'de 20 ürünlük katalog oluştur ve kategorize et",
+            "deliverable": "Excel dosyasında ürün kataloğu",
+            "steps": [
+              "Excel veya Google Sheets aç",
+              "Sütunlar oluştur: SKU, Ürün Adı, Kategori, Alt Kategori, Açıklama, Maliyet, Satış Fiyatı, Stok, Durum",
+              "3 ana kategori belirle: Takı, Ev Dekorasyonu, Aksesuar",
+              "Her kategoride 6-7 ürün ekle (toplam 20 ürün)",
+              "Her ürüne benzersiz SKU ver: ELS-TKI-001, ELS-EVD-001, vb.",
+              "Gerçekçi fiyatlar belirle: Maliyet + %50-100 kar marjı",
+              "Stok miktarları ekle: 5-50 arası",
+              "Durum sütunu: 'Stokta' veya 'Tükendi'",
+              "Dosyayı kaydet: 'urun-katalogu.xlsx'"
+            ],
+            "tools": [
+              "Microsoft Excel veya Google Sheets",
+              "SKU oluşturucu (opsiyonel): online araçlar",
+              "Fiyat araştırması: Etsy, Trendyol, Hepsiburada"
+            ],
+            "exampleOutput": "Katalog örneği:\n\nSKU         | Ürün Adı                    | Kategori | Alt Kategori | Maliyet | Satış | Stok | Durum\nELS-TKI-001 | Gümüş Kolye - Doğal Taş     | Takı     | Kolyeler     | 150₺    | 299₺  | 15   | Stokta\nELS-TKI-002 | El Örgüsü Bileklik          | Takı     | Bileklikler  | 50₺     | 99₺   | 30   | Stokta\nELS-EVD-001 | Makrome Duvar Süsü          | Ev Dek.  | Duvar Süsü   | 200₺    | 399₺  | 8    | Stokta\nELS-EVD-002 | Seramik Vazo - El Yapımı    | Ev Dek.  | Vazolar      | 120₺    | 249₺  | 0    | Tükendi\nELS-AKS-001 | Deri Cüzdan - El Dikişli    | Aksesuar | Cüzdanlar    | 180₺    | 349₺  | 12   | Stokta\n\n... (20 ürüne kadar devam)",
+            "commonMistakes": [
+              "SKU'ları benzersiz yapmamak - Her ürün farklı kod olmalı",
+              "Kategori tutarsızlığı - 'Takı' ve 'Taki' farklı kategoriler olur",
+              "Gerçekçi olmayan fiyatlar - Maliyet > Satış fiyatı olamaz",
+              "Stok bilgisi eksik - Her ürün için stok olmalı",
+              "Açıklama yazmamak - Müşteri ürünü anlamalı"
+            ],
+            "validationQuestions": [
+              {
+                "question": "Kaç ana kategori oluşturdun? Neden bu kategorileri seçtin?",
+                "expectedKeywords": "3, Takı, Ev Dekorasyonu, Aksesuar, el yapımı",
+                "hint": "3 ana kategori olmalı: Takı, Ev Dekorasyonu, Aksesuar. Bu kategoriler el yapımı ürünler için mantıklı ve müşterilerin aradığı kategoriler."
+              },
+              {
+                "question": "SKU kodlarını nasıl oluşturdun? Hangi sistemi kullandın?",
+                "expectedKeywords": "ELS, TKI, EVD, AKS, benzersiz, kod",
+                "hint": "SKU formatı: ELS (marka) - TKI (kategori) - 001 (sıra). Örnek: ELS-TKI-001. Her ürün benzersiz kod almalı."
+              },
+              {
+                "question": "Fiyatlandırmayı nasıl yaptın? Kar marjı ne kadar?",
+                "expectedKeywords": "maliyet, %50, %100, kar, satış fiyatı",
+                "hint": "Satış Fiyatı = Maliyet + Kar Marjı. El yapımı ürünlerde %50-100 kar marjı normal. Örnek: 150₺ maliyet → 299₺ satış (%99 kar)."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "module-2",
+      "order": 2,
+      "title": "Fiyatlandırma",
+      "description": "Karlı ve rekabetçi fiyatlandırma stratejisi oluştur",
+      "xpReward": 70,
+      "estimatedMinutes": 45,
+      "stages": [
+        {
+          "id": "stage-2-1-learn",
+          "order": 3,
+          "type": "learn",
+          "title": "E-Ticaret Fiyatlandırma",
+          "xpReward": 15,
+          "estimatedMinutes": 12,
+          "content": {
+            "type": "learn",
+            "concept": "Fiyatlandırma Stratejileri",
+            "definition": "Fiyatlandırma, ürünün satış fiyatını belirleme sürecidir. Maliyet, rekabet, değer algısı ve kar hedefine göre yapılır.",
+            "whyImportant": "Doğru fiyatlandırma, hem karlılığı hem de satışları etkiler. Çok yüksek fiyat → satış düşer. Çok düşük fiyat → kar azalır. ElSanatları için, el yapımı ürünlerin değerini yansıtan ama rekabetçi fiyatlar belirleyeceğiz.",
+            "howItWorks": "Fiyatlandırma Yöntemleri:\n\n1. Maliyet Bazlı:\n   Satış Fiyatı = Maliyet + Kar Marjı\n   Örnek: 100₺ maliyet + %80 kar = 180₺\n\n2. Rekabet Bazlı:\n   Rakiplerin fiyatlarına bakarak belirleme\n   Örnek: Rakip 200₺ → Sen 190₺ (daha ucuz)\n\n3. Değer Bazlı:\n   Müşterinin ödemeye razı olduğu fiyat\n   Örnek: El yapımı = premium = yüksek fiyat\n\n4. Psikolojik Fiyatlandırma:\n   300₺ yerine 299₺ (daha ucuz görünür)\n   100₺ yerine 99₺\n\nKar Marjı Hesaplama:\nKar Marjı % = ((Satış - Maliyet) / Satış) x 100\nÖrnek: ((299 - 150) / 299) x 100 = %49.8",
+            "examples": [
+              "Maliyet: 150₺ → Satış: 299₺ (kar marjı %49.8)",
+              "Maliyet: 50₺ → Satış: 99₺ (kar marjı %49.5)",
+              "Psikolojik: 300₺ → 299₺ (daha ucuz görünür)",
+              "Paket fiyat: 3 ürün al 2'sinin parasını öde",
+              "İndirim: %20 indirim → 299₺'den 239₺'ye"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-2-1-apply",
+          "order": 4,
+          "type": "apply",
+          "title": "Fiyatlandırma Stratejisi Oluştur",
+          "xpReward": 25,
+          "estimatedMinutes": 20,
+          "content": {
+            "type": "apply",
+            "task": "Ürün kataloğundaki tüm ürünler için fiyatlandırma analizi yap",
+            "deliverable": "Fiyatlandırma analiz raporu",
+            "steps": [
+              "Ürün kataloğunu aç (urun-katalogu.xlsx)",
+              "Yeni sütun ekle: 'Kar Marjı %'",
+              "Her ürün için kar marjı hesapla: ((Satış - Maliyet) / Satış) x 100",
+              "Ortalama kar marjını hesapla (tüm ürünler)",
+              "Rakip analizi yap: Etsy, Trendyol'da benzer ürünlere bak",
+              "Fiyatları karşılaştır: Senin fiyatın rekabetçi mi?",
+              "Psikolojik fiyatlandırma uygula: 300₺ → 299₺",
+              "Yeni bir sayfa ekle: 'Fiyatlandırma Stratejisi'",
+              "Stratejiyi yaz: Hangi yöntemi kullandın? Neden?",
+              "Dosyayı kaydet"
+            ],
+            "tools": [
+              "Excel/Google Sheets",
+              "Hesap makinesi",
+              "Etsy.com - Rakip fiyat araştırması",
+              "Trendyol.com - Yerel pazar fiyatları"
+            ],
+            "exampleOutput": "Fiyatlandırma Analizi:\n\nÜrün: Gümüş Kolye\nMaliyet: 150₺\nSatış: 299₺\nKar Marjı: %49.8\nRakip Fiyatı (Etsy): $35 (≈320₺)\nDurum: Rekabetçi ✓\n\nÜrün: El Örgüsü Bileklik\nMaliyet: 50₺\nSatış: 99₺\nKar Marjı: %49.5\nRakip Fiyatı (Trendyol): 120₺\nDurum: Daha ucuz ✓\n\nOrtalama Kar Marjı: %52\nStrateji: Değer bazlı + Psikolojik\nHedef: Premium ama erişilebilir fiyatlar\n\nÖneriler:\n- Tüm fiyatları 9 ile bitir (299₺, 99₺)\n- Paket indirimi: 3 al 2 öde\n- Ücretsiz kargo: 500₺ üzeri",
+            "commonMistakes": [
+              "Kar marjını yanlış hesaplamak - Formül: ((Satış - Maliyet) / Satış) x 100",
+              "Rakip analizi yapmamak - Pazar fiyatlarını bilmeden fiyat belirleme",
+              "Tüm ürünlere aynı kar marjı - Bazı ürünler daha yüksek marj alabilir",
+              "Psikolojik fiyatlandırmayı göz ardı etmek - 300₺ yerine 299₺ daha çekici",
+              "Kargo maliyetini unutmak - Fiyata kargo dahil mi?"
+            ],
+            "validationQuestions": [
+              {
+                "question": "Ortalama kar marjın ne kadar? Nasıl hesapladın?",
+                "expectedKeywords": "kar marjı, %, hesaplama, ortalama, 50",
+                "hint": "Kar Marjı % = ((Satış - Maliyet) / Satış) x 100. Tüm ürünlerin kar marjını topla ve ürün sayısına böl. El yapımı ürünlerde %40-60 normal."
+              },
+              {
+                "question": "Rakip analizi yaptın mı? Fiyatların rekabetçi mi?",
+                "expectedKeywords": "Etsy, Trendyol, rakip, karşılaştırma, rekabetçi",
+                "hint": "Etsy ve Trendyol'da benzer ürünlere bakmalıydın. Fiyatların çok yüksekse satış düşer, çok düşükse kar azalır."
+              },
+              {
+                "question": "Psikolojik fiyatlandırma uyguladın mı? Örnekler ver.",
+                "expectedKeywords": "299, 99, 9, psikolojik, ucuz görünür",
+                "hint": "300₺ yerine 299₺, 100₺ yerine 99₺ kullanmalıydın. 9 ile biten fiyatlar daha ucuz görünür ve satışları artırır."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "totalXP": 130,
+  "estimatedHours": 1.5,
+  "difficulty": "Çırak",
+  "learningOutcomes": [
+    "Ürün kataloğu oluşturabilme",
+    "SKU sistemi kullanabilme",
+    "Fiyatlandırma stratejisi geliştirebilme",
+    "Kar marjı hesaplayabilme"
+  ],
+  "toolsUsed": [
+    "Microsoft Excel/Google Sheets",
+    "Etsy (rakip analizi)",
+    "Trendyol (pazar araştırması)",
+    "Hesap makinesi"
+  ]
+}
