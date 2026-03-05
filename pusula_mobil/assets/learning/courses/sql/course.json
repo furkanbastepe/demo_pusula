@@ -1,0 +1,13 @@
+{
+  "id": "sql-basics",
+  "title": "SQL Temelleri",
+  "description": "Veritabanı yönetimi ve SQL sorguları ile veri analizi öğren",
+  "iconPath": "🗄️",
+  "difficulty": "beginner",
+  "totalXP": 500,
+  "lessonIds": [
+    "sql-basics-1",
+    "sql-basics-2",
+    "sql-basics-3"
+  ]
+}

@@ -1,0 +1,357 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   🎨 PUSULA — Premium Mobile Emulator Shell
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Reset & Foundations ────────────────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Zafer Palette — mirrors PColors */
+  --bg: #0D0F14;
+  --surface: #151922;
+  --surface-hi: #1C2230;
+  --primary: #00C48C;
+  --accent: #FFAA00;
+  --text: #F4F7FB;
+  --text-dim: #AAB6C6;
+  --border: #2B3240;
+  --gradient-start: #00C48C;
+  --gradient-end: #0284C7;
+  --gradient-purple: #8B5CF6;
+
+  /* Device dimensions — iPhone 15 Pro proportions (393×852) */
+  --device-width: 375px;
+  --device-height: 812px;
+  --bezel-radius: 50px;
+  --bezel-width: 12px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Background Environment ─────────────────────────────────────────────────── */
+.emulator-environment {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* Subtle organic glow blobs */
+.emulator-environment::before,
+.emulator-environment::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.emulator-environment::before {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  top: -15%;
+  left: -10%;
+  animation: floatBlob1 18s ease-in-out infinite alternate;
+}
+
+.emulator-environment::after {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--gradient-purple) 0%, transparent 70%);
+  bottom: -15%;
+  right: -10%;
+  animation: floatBlob2 22s ease-in-out infinite alternate;
+}
+
+@keyframes floatBlob1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(60px, 40px) scale(1.15); }
+  100% { transform: translate(-30px, 60px) scale(0.95); }
+}
+
+@keyframes floatBlob2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-50px, -30px) scale(1.1); }
+  100% { transform: translate(40px, -50px) scale(0.9); }
+}
+
+/* ── Device Frame ───────────────────────────────────────────────────────────── */
+.device-frame {
+  position: relative;
+  width: calc(var(--device-width) + var(--bezel-width) * 2);
+  height: calc(var(--device-height) + var(--bezel-width) * 2);
+  border-radius: var(--bezel-radius);
+  
+  /* Outer bezel — subtle titanium-like gradient */
+  background: linear-gradient(
+    145deg,
+    #2A2E38 0%,
+    #1A1D24 40%,
+    #2A2E38 100%
+  );
+  
+  /* Premium multi-layer shadow */
+  box-shadow:
+    /* Ambient shadow */
+    0 0 80px rgba(0, 0, 0, 0.5),
+    /* Glow ring */
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    /* Primary glow reflection */
+    0 4px 60px -10px rgba(0, 196, 140, 0.15),
+    /* Inner shine */
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  
+  /* GPU acceleration */
+  transform: translateZ(0);
+  will-change: transform;
+  
+  /* Glassmorphism overlay */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* Side buttons — volume + power */
+.device-frame::before {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 180px;
+  width: 3px;
+  height: 70px;
+  background: linear-gradient(180deg, #3A3E48, #22252E, #3A3E48);
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.device-frame::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: 150px;
+  width: 3px;
+  height: 40px;
+  background: linear-gradient(180deg, #3A3E48, #22252E, #3A3E48);
+  border-radius: 3px 0 0 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* ── Inner Screen Bezel ─────────────────────────────────────────────────────── */
+.device-screen {
+  position: absolute;
+  top: var(--bezel-width);
+  left: var(--bezel-width);
+  right: var(--bezel-width);
+  bottom: var(--bezel-width);
+  border-radius: calc(var(--bezel-radius) - var(--bezel-width));
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* ── Dynamic Island ─────────────────────────────────────────────────────────── */
+.dynamic-island {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 34px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 100;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Camera dot inside island */
+.dynamic-island::after {
+  content: '';
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #1a1f3a, #0a0c14);
+  box-shadow:
+    0 0 0 1px rgba(50, 60, 90, 0.5),
+    inset 0 0 3px rgba(0, 100, 200, 0.15);
+}
+
+/* ── Flutter Host Target ────────────────────────────────────────────────────── */
+#flutter_target {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: calc(var(--bezel-radius) - var(--bezel-width));
+}
+
+/* ── Loader ─────────────────────────────────────────────────────────────────── */
+.flutter-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border-radius: calc(var(--bezel-radius) - var(--bezel-width));
+  z-index: 50;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.flutter-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Spinner ring */
+.spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Loader text */
+.loader-text {
+  margin-top: 20px;
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.loader-brand {
+  margin-top: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 3px;
+}
+
+/* Pulse effect on brand */
+.loader-brand::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin: 8px auto 0;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  animation: pulse-line 2s ease-in-out infinite;
+}
+
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.3; transform: scaleX(0.6); }
+  50%      { opacity: 1;   transform: scaleX(1); }
+}
+
+/* ── Error Fallback ─────────────────────────────────────────────────────────── */
+.browser-error {
+  display: none;
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border-radius: calc(var(--bezel-radius) - var(--bezel-width));
+  padding: 32px;
+  text-align: center;
+  z-index: 60;
+}
+
+.browser-error.visible {
+  display: flex;
+}
+
+.browser-error svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  color: var(--accent);
+}
+
+.browser-error h3 {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.browser-error p {
+  color: var(--text-dim);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-height: 860px) {
+  :root {
+    --device-width: 320px;
+    --device-height: 693px;
+    --bezel-radius: 44px;
+    --bezel-width: 10px;
+  }
+}
+
+@media (max-height: 720px) {
+  :root {
+    --device-width: 280px;
+    --device-height: 607px;
+    --bezel-radius: 38px;
+    --bezel-width: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  /* On actual mobile — remove the frame, go full screen */
+  :root {
+    --bezel-radius: 0px;
+    --bezel-width: 0px;
+  }
+  .device-frame {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--bg);
+  }
+  .device-screen { border-radius: 0; }
+  #flutter_target { border-radius: 0; }
+  .dynamic-island { display: none; }
+  .device-frame::before,
+  .device-frame::after { display: none; }
+  .emulator-environment::before,
+  .emulator-environment::after { display: none; }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "prob_culture_006",
+  "title": "Dijital Kültürel Miras Arşivi ve Sanal Müze",
+  "description": "Eskişehir'in zengin kültürel mirasını dijital ortamda korumak ve gelecek nesillere aktarmak için interaktif bir platform oluşturmak istiyoruz. Platform, tarihi eserlerin 3D modellerini, sanal tur imkanlarını, artırılmış gerçeklik deneyimlerini ve eğitim içeriklerini içermeli. Özellikle okullar için eğitim materyali olarak kullanılabilecek, erişilebilir ve ilgi çekici bir deneyim sunmalıdır.",
+  "organization": "Eskişehir Büyükşehir Belediyesi",
+  "organizationId": "org_esbb_001",
+  "impactArea": "culture",
+  "city": "Eskişehir",
+  "requiredSkills": ["3D Modelleme", "AR/VR", "Web Geliştirme", "Dijital Tasarım"],
+  "status": "open",
+  "urgencyLevel": 2,
+  "impactScore": 75,
+  "submittedAt": "2025-01-22T13:00:00Z",
+  "deadline": "2025-09-30T23:59:59Z",
+  "attachments": [],
+  "constraints": {
+    "budget": "Kültür ve turizm bütçesi",
+    "timeline": "8 ay içinde ilk koleksiyon",
+    "technical": "Yüksek çözünürlüklü 3D modeller, mobil uyumlu"
+  },
+  "engagement": {
+    "views": 134,
+    "saves": 22,
+    "workshopApplications": 9,
+    "activeWorkshops": 1,
+    "submittedSolutions": 0
+  }
+}

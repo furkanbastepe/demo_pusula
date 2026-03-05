@@ -1,0 +1,28 @@
+{
+  "id": "prob_traffic_001",
+  "title": "Şehir İçi Trafik Yoğunluğu Analiz Sistemi",
+  "description": "İstanbul'da trafik yoğunluğu giderek artıyor ve vatandaşlarımız günlük hayatlarında ciddi zorluklar yaşıyor. Gerçek zamanlı trafik verilerini analiz edip, alternatif güzergah önerileri sunabilecek bir sistem geliştirmek istiyoruz. Sistem, trafik kameralarından ve sensörlerden gelen verileri işleyerek yoğunluk haritaları oluşturmalı ve kullanıcılara akıllı rota önerileri sunmalıdır.",
+  "organization": "İstanbul Büyükşehir Belediyesi",
+  "organizationId": "org_ibb_001",
+  "impactArea": "transportation",
+  "city": "istanbul",
+  "requiredSkills": ["Veri Analisti", "Python", "Makine Öğrenmesi"],
+  "status": "open",
+  "urgencyLevel": 4,
+  "impactScore": 95,
+  "submittedAt": "2025-01-15T10:00:00Z",
+  "deadline": "2025-04-30T23:59:59Z",
+  "attachments": [],
+  "constraints": {
+    "budget": "Yazılım geliştirme için bütçe ayrılmıştır",
+    "timeline": "3 ay içinde prototip hazır olmalı",
+    "technical": "Mevcut trafik kamera sistemleriyle entegre olabilmeli"
+  },
+  "engagement": {
+    "views": 245,
+    "saves": 34,
+    "workshopApplications": 18,
+    "activeWorkshops": 2,
+    "submittedSolutions": 0
+  }
+}

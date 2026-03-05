@@ -1,0 +1,13 @@
+{
+  "id": "python-basics",
+  "title": "Python Temelleri",
+  "description": "Python programlama diline giriş - değişkenler, veri tipleri ve temel işlemler",
+  "iconPath": "🐍",
+  "difficulty": "beginner",
+  "totalXP": 600,
+  "lessonIds": [
+    "python-basics-1",
+    "python-basics-2",
+    "python-basics-3"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "prob_env_003",
+  "title": "Akıllı Atık Yönetimi ve Geri Dönüşüm Takip Sistemi",
+  "description": "İzmir'de geri dönüşüm oranlarını artırmak ve atık toplama süreçlerini optimize etmek için akıllı bir sistem geliştirmek istiyoruz. Sistem, atık konteynerlerinin doluluk oranlarını takip etmeli, en verimli toplama rotalarını hesaplamalı ve vatandaşlara geri dönüşüm konusunda bilgilendirme yapmalıdır. Ayrıca, geri dönüşüm yapan vatandaşları ödüllendiren bir gamification sistemi de içermelidir.",
+  "organization": "İzmir Büyükşehir Belediyesi",
+  "organizationId": "org_izbb_001",
+  "impactArea": "environment",
+  "city": "izmir",
+  "requiredSkills": ["IoT", "Veri Analisti", "Mobil Uygulama Geliştirme"],
+  "status": "open",
+  "urgencyLevel": 5,
+  "impactScore": 92,
+  "submittedAt": "2025-01-10T09:00:00Z",
+  "deadline": "2025-03-31T23:59:59Z",
+  "attachments": [],
+  "constraints": {
+    "budget": "IoT sensör maliyetleri dahil",
+    "timeline": "2.5 ay içinde pilot bölgede test",
+    "technical": "Mevcut belediye sistemleriyle entegre olabilmeli"
+  },
+  "engagement": {
+    "views": 312,
+    "saves": 45,
+    "workshopApplications": 22,
+    "activeWorkshops": 3,
+    "submittedSolutions": 1
+  }
+}

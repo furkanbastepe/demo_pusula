@@ -1,0 +1,88 @@
+name: pusula
+description: "Mikro Proje Platformu"
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.5.1
+  hooks_riverpod: ^2.5.1
+  flutter_hooks: ^0.20.5
+
+  # Navigation
+  go_router: ^14.1.1
+
+  # UI/UX
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+  lucide_icons_flutter: ^3.1.0
+  flutter_animate: ^4.5.0
+
+  # Networking & Caching
+  cached_network_image: ^3.3.1
+
+  # Storage
+  shared_preferences: ^2.2.2
+  
+  # Code Generation
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+  dio: ^5.7.0
+  
+  # AI Assistant
+  google_generative_ai: ^0.4.7
+  
+  # Learning Module
+  flutter_markdown: ^0.7.3
+  flutter_highlight: ^0.7.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+  
+  # Code Generation
+  build_runner: ^2.4.13
+  freezed: ^2.5.7
+  json_serializable: ^6.8.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/icon/
+    - assets/images/
+    - assets/projects/
+    - assets/problems/
+    - assets/learning/
+    - assets/learning/courses/
+    - assets/learning/courses/python/
+    - assets/learning/courses/python/lessons/
+    - assets/learning/courses/sql/
+    - assets/learning/courses/sql/lessons/
+    - assets/learning/images/
+
+
+# flutter_launcher_icons:
+#   android: true                
+#   ios: true                    
+#   image_path: "assets/icon/pusula_logo.png" 
+#   min_sdk_android: 21           
+#   remove_alpha_ios: true        
+#   adaptive_icon_background: "#1A1A1A" 
+#   adaptive_icon_foreground: "assets/icon/pusula_logo.png" 

@@ -1,0 +1,63 @@
+{
+  "id": "sql-basics-3",
+  "courseId": "sql-basics",
+  "order": 3,
+  "title": "ORDER BY ile Sıralama",
+  "estimatedTime": 15,
+  "xpReward": 75,
+  "sections": [
+    {
+      "type": "content",
+      "data": {
+        "markdown": "# ORDER BY ile Sıralama\n\nVerileri belirli bir sıraya göre görmek istediğimizde **ORDER BY** komutunu kullanırız. Düşün ki bir sınıf listesini alfabetik sıraya koymak istiyorsun!\n\n## ORDER BY Nedir?\n\nORDER BY, sorgu sonuçlarını belirli bir sütuna göre sıralar.\n\n## Artan Sıralama (ASC)\n\n```sql\nSELECT * FROM workers\nORDER BY age ASC\n```\n\nBu sorgu çalışanları yaşa göre küçükten büyüğe sıralar.\n- ASC = Ascending (Artan)\n- Varsayılan sıralama türüdür\n\n## Azalan Sıralama (DESC)\n\n```sql\nSELECT * FROM workers\nORDER BY age DESC\n```\n\nBu sorgu çalışanları yaşa göre büyükten küçüğe sıralar.\n- DESC = Descending (Azalan)\n\n## Metin Sıralama\n\nMetin sütunları alfabetik olarak sıralanır:\n\n```sql\nSELECT * FROM workers\nORDER BY firstname ASC\n```\n\nBu sorgu çalışanları isme göre A'dan Z'ye sıralar.\n\n## WHERE ile Birlikte Kullanım\n\nFiltreleme ve sıralamayı birlikte kullanabiliriz:\n\n```sql\nSELECT * FROM workers\nWHERE age > 25\nORDER BY age DESC\n```\n\nBu sorgu:\n1. Önce yaşı 25'ten büyük olanları filtreler\n2. Sonra yaşa göre büyükten küçüğe sıralar\n\n## Önemli Not\n\nSQL sorgularında sıra önemlidir:\n1. SELECT\n2. FROM\n3. WHERE (varsa)\n4. ORDER BY (varsa)"
+      }
+    },
+    {
+      "type": "quiz",
+      "data": {
+        "question": "ORDER BY komutu ne işe yarar?",
+        "options": [
+          "Verileri filtreler",
+          "Verileri sıralar",
+          "Verileri gruplar",
+          "Verileri siler"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "ORDER BY komutu, sorgu sonuçlarını belirli bir sütuna göre sıralamak için kullanılır. ASC (artan) veya DESC (azalan) şekilde sıralayabilirsiniz.",
+        "xpReward": 15
+      }
+    },
+    {
+      "type": "quiz",
+      "data": {
+        "question": "DESC ne anlama gelir?",
+        "options": [
+          "Artan sıralama",
+          "Azalan sıralama",
+          "Alfabetik sıralama",
+          "Rastgele sıralama"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "DESC, Descending (Azalan) anlamına gelir. Büyükten küçüğe veya Z'den A'ya sıralama yapar.",
+        "xpReward": 10
+      }
+    },
+    {
+      "type": "code_challenge",
+      "data": {
+        "description": "**workers** tablosundan tüm çalışanları deneyim yılına göre en çoktan en aza sıralayan sorgu hangisidir?",
+        "codeExample": "-- workers tablosu:\n-- firstname | lastname | age | exp_years | gender\n-- Ghully | Thuas | 29 | 2.3 | Female\n-- Bostal | Shkolky | 32 | 0.2 | Male\n-- Qaostu | Malop | 21 | 4.0 | Female",
+        "options": [
+          "SELECT * FROM workers ORDER BY exp_years ASC",
+          "SELECT * FROM workers ORDER BY exp_years DESC",
+          "SELECT * FROM workers WHERE exp_years DESC",
+          "SELECT * FROM workers SORT BY exp_years DESC"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "ORDER BY exp_years DESC komutu, deneyim yılına göre büyükten küçüğe (en çoktan en aza) sıralar. DESC = Descending (Azalan).",
+        "detailedSolution": "# ORDER BY ile Sıralama\n\n## Doğru Cevap:\n```sql\nSELECT * FROM workers\nORDER BY exp_years DESC\n```\n\n## Sonuç Sırası:\n1. Qaostu Malop (4.0 yıl) - En deneyimli\n2. Ghully Thuas (2.3 yıl)\n3. Bostal Shkolky (0.2 yıl) - En az deneyimli\n\n## Sıralama Türleri:\n- **ASC** (Ascending): Küçükten büyüğe (0.2 → 2.3 → 4.0)\n- **DESC** (Descending): Büyükten küçüğe (4.0 → 2.3 → 0.2)\n\n## Yanlış Seçenekler:\n❌ `ORDER BY exp_years ASC` - Ters sıralama (en azdan en çoğa)\n❌ `WHERE exp_years DESC` - WHERE filtreleme içindir, sıralama için değil\n❌ `SORT BY exp_years DESC` - SQL'de SORT BY yoktur, ORDER BY kullanılır",
+        "xpReward": 30
+      }
+    }
+  ]
+}

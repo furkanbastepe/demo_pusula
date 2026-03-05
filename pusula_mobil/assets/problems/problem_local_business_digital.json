@@ -1,0 +1,28 @@
+{
+  "id": "prob_econ_004",
+  "title": "Yerel İşletmeler İçin Dijital Pazarlama Platformu",
+  "description": "Bursa'daki küçük ve orta ölçekli işletmelerin dijital pazarlama yapabilmesi için kullanımı kolay bir platform geliştirmek istiyoruz. Platform, sosyal medya yönetimi, müşteri ilişkileri, online sipariş alma ve dijital reklam oluşturma gibi özellikleri tek çatı altında toplamalı. Özellikle teknik bilgisi olmayan işletme sahiplerinin kolayca kullanabileceği, Türkçe destekli ve uygun maliyetli bir çözüm olmalı.",
+  "organization": "Bursa Ticaret ve Sanayi Odası",
+  "organizationId": "org_btso_001",
+  "impactArea": "economy",
+  "city": "bursa",
+  "requiredSkills": ["Dijital Pazarlama", "Web Geliştirme", "UI/UX Tasarım"],
+  "status": "open",
+  "urgencyLevel": 3,
+  "impactScore": 78,
+  "submittedAt": "2025-01-20T11:15:00Z",
+  "deadline": "2025-07-01T23:59:59Z",
+  "attachments": [],
+  "constraints": {
+    "budget": "KOBİ'lerin ödeyebileceği abonelik modeli",
+    "timeline": "6 ay içinde beta versiyonu",
+    "technical": "Bulut tabanlı, ölçeklenebilir altyapı"
+  },
+  "engagement": {
+    "views": 189,
+    "saves": 31,
+    "workshopApplications": 12,
+    "activeWorkshops": 1,
+    "submittedSolutions": 0
+  }
+}

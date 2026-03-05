@@ -1,0 +1,292 @@
+{
+  "id": "software-dev-todo-app",
+  "title": "Web Sitesi Oluşturma",
+  "skillPath": "Yazılım Geliştirici",
+  "emoji": "💻",
+  "context": {
+    "companyName": "TeknoAjans Dijital",
+    "companyType": "Dijital Ajans",
+    "industry": "Yazılım & Teknoloji",
+    "projectGoal": "Müşteriler için basit ve kullanışlı bir yapılacaklar listesi web uygulaması geliştirmek",
+    "targetAudience": "Küçük işletme sahipleri ve freelancer'lar",
+    "scenario": "TeknoAjans'ın müşterisi olan bir danışmanlık firması, çalışanlarının günlük görevlerini takip edebilecekleri basit bir web uygulaması istiyor. Uygulama, görev ekleme, tamamlama, silme ve filtreleme özelliklerine sahip olmalı. Sen bu projeyi HTML, CSS ve JavaScript kullanarak geliştireceksin.",
+    "deliverables": [
+      "HTML ile sayfa yapısı",
+      "CSS ile modern tasarım",
+      "JavaScript ile interaktif özellikler",
+      "LocalStorage ile veri saklama"
+    ]
+  },
+  "modules": [
+    {
+      "id": "module-1",
+      "order": 1,
+      "title": "HTML Yapısı",
+      "description": "Web sayfasının temel yapısını oluştur",
+      "xpReward": 80,
+      "estimatedMinutes": 50,
+      "stages": [
+        {
+          "id": "stage-1-1-learn",
+          "order": 1,
+          "type": "learn",
+          "title": "HTML Temel Yapısı",
+          "xpReward": 15,
+          "estimatedMinutes": 12,
+          "content": {
+            "type": "learn",
+            "concept": "HTML Doküman Yapısı",
+            "definition": "HTML (HyperText Markup Language), web sayfalarının iskeletini oluşturan işaretleme dilidir. Her HTML dokümanı belirli bir yapıya sahiptir: <!DOCTYPE>, <html>, <head> ve <body> etiketleri.",
+            "whyImportant": "HTML, web geliştirmenin temelidir. Bir binanın temeli gibi, HTML olmadan CSS ve JavaScript çalışamaz. Doğru HTML yapısı, sayfanın tüm tarayıcılarda düzgün görünmesini ve arama motorları tarafından anlaşılmasını sağlar. Yapılacaklar uygulamamızda, görev listesi, input alanları ve butonlar için HTML kullanacağız.",
+            "howItWorks": "HTML dokümanı şu yapıda çalışır:\n\n1. <!DOCTYPE html>: Tarayıcıya HTML5 kullandığımızı söyler\n2. <html>: Tüm HTML içeriğini sarar\n3. <head>: Sayfa bilgileri (başlık, stil, meta)\n4. <body>: Kullanıcının gördüğü içerik\n\nTemel Yapı:\n<!DOCTYPE html>\n<html lang=\"tr\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Sayfa Başlığı</title>\n</head>\n<body>\n  <!-- İçerik buraya -->\n</body>\n</html>",
+            "examples": [
+              "<!DOCTYPE html> <!-- HTML5 doküman tipi -->",
+              "<html lang=\"tr\"> <!-- Türkçe dil ayarı -->",
+              "<meta charset=\"UTF-8\"> <!-- Türkçe karakter desteği -->",
+              "<title>Yapılacaklar Listem</title> <!-- Sekme başlığı -->",
+              "<h1>Görevlerim</h1> <!-- Ana başlık -->",
+              "<input type=\"text\" placeholder=\"Yeni görev...\"> <!-- Metin girişi -->",
+              "<button>Ekle</button> <!-- Buton -->",
+              "<ul id=\"task-list\"></ul> <!-- Görev listesi -->"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-1-1-apply",
+          "order": 2,
+          "type": "apply",
+          "title": "Temel HTML Sayfası Oluştur",
+          "xpReward": 25,
+          "estimatedMinutes": 20,
+          "content": {
+            "type": "apply",
+            "task": "Yapılacaklar uygulaması için temel HTML yapısını oluştur",
+            "deliverable": "index.html dosyası ile çalışan bir web sayfası",
+            "steps": [
+              "Bilgisayarında yeni bir klasör oluştur: 'yapilacaklar-uygulamasi'",
+              "Bu klasörde 'index.html' adında yeni bir dosya oluştur",
+              "Dosyayı bir metin editörü ile aç (VS Code, Notepad++, veya Sublime Text önerilir)",
+              "<!DOCTYPE html> ile başla",
+              "<html lang=\"tr\"> etiketi ekle",
+              "<head> bölümünde: charset, viewport ve title ekle",
+              "<body> içinde: h1 başlık, input alanı, buton ve ul listesi ekle",
+              "Dosyayı kaydet (Ctrl+S veya Cmd+S)",
+              "index.html dosyasını tarayıcıda aç (çift tıkla veya sürükle-bırak)",
+              "Sayfanın açıldığını ve başlığın göründüğünü kontrol et"
+            ],
+            "tools": [
+              "VS Code - Ücretsiz, en popüler kod editörü (code.visualstudio.com)",
+              "Notepad++ - Hafif ve hızlı (Windows için)",
+              "Sublime Text - Hızlı ve güçlü",
+              "Google Chrome veya Firefox - Tarayıcı (test için)"
+            ],
+            "exampleOutput": "Tarayıcıda şunları görmelisin:\n\n- Sekme başlığı: 'Yapılacaklar Listem'\n- Sayfa başlığı: 'Görevlerim' (büyük, kalın)\n- Bir metin kutusu (placeholder: 'Yeni görev ekle...')\n- 'Ekle' butonu\n- Boş bir alan (görev listesi için)\n\nSayfa çok basit görünecek (henüz stil yok), ama yapı hazır olmalı.\n\nHTML Kodu Örneği:\n<!DOCTYPE html>\n<html lang=\"tr\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Yapılacaklar Listem</title>\n</head>\n<body>\n  <h1>Görevlerim</h1>\n  <input type=\"text\" id=\"task-input\" placeholder=\"Yeni görev ekle...\">\n  <button id=\"add-btn\">Ekle</button>\n  <ul id=\"task-list\"></ul>\n</body>\n</html>",
+            "commonMistakes": [
+              "<!DOCTYPE html> yerine <!doctype HTML> yazmak - Büyük/küçük harf önemli değil ama standart küçük harftir",
+              "Etiketleri kapatmayı unutmak - Her <html> için </html> olmalı",
+              "charset=\"UTF-8\" yazmayı unutmak - Türkçe karakterler bozuk görünür",
+              "id ve class karıştırmak - id benzersiz, class tekrar edilebilir",
+              "Dosyayı .txt olarak kaydetmek - Mutlaka .html uzantılı olmalı"
+            ],
+            "validationQuestions": [
+              {
+                "question": "HTML dosyanı tarayıcıda açtığında ne gördün? Başlık ve input alanı var mı?",
+                "expectedKeywords": "başlık, Görevlerim, input, metin kutusu, buton, Ekle",
+                "hint": "Tarayıcıda 'Görevlerim' başlığı, bir metin kutusu ve 'Ekle' butonu görmelisin. Eğer görmüyorsan, dosyayı .html uzantılı kaydettiğinden emin ol."
+              },
+              {
+                "question": "Hangi HTML etiketlerini kullandın? En az 5 tanesini say.",
+                "expectedKeywords": "html, head, body, h1, input, button, ul, title, meta",
+                "hint": "Kullanman gereken etiketler: <!DOCTYPE html>, <html>, <head>, <body>, <h1>, <input>, <button>, <ul>"
+              },
+              {
+                "question": "charset=\"UTF-8\" neden önemli? Ne işe yarar?",
+                "expectedKeywords": "Türkçe, karakter, ğ, ü, ş, ı, ç, ö",
+                "hint": "UTF-8, Türkçe karakterlerin (ğ, ü, ş, ı, ç, ö) doğru görünmesini sağlar. Olmazsa 'Görevlerim' yerine 'G�revlerim' gibi bozuk karakterler görürsün."
+              }
+            ]
+          }
+        },
+        {
+          "id": "stage-1-2-learn",
+          "order": 3,
+          "type": "learn",
+          "title": "HTML Form Elemanları",
+          "xpReward": 15,
+          "estimatedMinutes": 10,
+          "content": {
+            "type": "learn",
+            "concept": "Input ve Button Elemanları",
+            "definition": "HTML form elemanları, kullanıcıdan veri almamızı sağlar. <input> metin, sayı, tarih gibi verileri alır. <button> kullanıcı etkileşimi için tıklanabilir buton oluşturur.",
+            "whyImportant": "Web uygulamaları kullanıcı ile etkileşimlidir. Yapılacaklar uygulamamızda, kullanıcı yeni görev eklemek için input kullanacak, eklemek için butona tıklayacak. Form elemanları olmadan interaktif uygulama yapamayız.",
+            "howItWorks": "Input Türleri:\n- type=\"text\": Metin girişi\n- type=\"number\": Sayı girişi\n- type=\"date\": Tarih seçici\n- type=\"checkbox\": Onay kutusu\n\nÖnemli Özellikler:\n- id: JavaScript'te erişmek için benzersiz kimlik\n- placeholder: İpucu metni\n- required: Zorunlu alan\n- value: Varsayılan değer\n\nButton:\n- <button>Metin</button>\n- onclick: Tıklama olayı\n- type=\"button\": Normal buton\n- type=\"submit\": Form gönderme",
+            "examples": [
+              "<input type=\"text\" id=\"task-input\" placeholder=\"Görev gir...\">",
+              "<input type=\"date\" id=\"due-date\">",
+              "<input type=\"checkbox\" id=\"completed\">",
+              "<button id=\"add-btn\">Ekle</button>",
+              "<button onclick=\"deleteTask()\">Sil</button>"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-1-2-apply",
+          "order": 4,
+          "type": "apply",
+          "title": "Gelişmiş Form Ekle",
+          "xpReward": 25,
+          "estimatedMinutes": 18,
+          "content": {
+            "type": "apply",
+            "task": "Görev ekleme formunu geliştir: tarih seçici ve öncelik ekle",
+            "deliverable": "Tarih ve öncelik seçenekli gelişmiş form",
+            "steps": [
+              "index.html dosyasını aç",
+              "Mevcut input'un altına yeni bir input ekle: type=\"date\" id=\"task-date\"",
+              "Bir select (açılır menü) ekle: öncelik seçimi için (Düşük, Orta, Yüksek)",
+              "Her option için value ve text ekle",
+              "Dosyayı kaydet ve tarayıcıda yenile (F5)",
+              "Tarih seçiciyi test et - bugünün tarihini seç",
+              "Öncelik menüsünü test et - 'Yüksek' seç",
+              "Tüm alanların düzgün göründüğünü kontrol et"
+            ],
+            "tools": [
+              "Kod editörü (VS Code)",
+              "Tarayıcı (Chrome/Firefox)",
+              "HTML referansı: developer.mozilla.org/tr/docs/Web/HTML"
+            ],
+            "exampleOutput": "Formda şunlar olmalı:\n\n1. Görev adı input (text)\n2. Tarih seçici (date) - takvim açılır\n3. Öncelik seçici (select) - Düşük/Orta/Yüksek\n4. Ekle butonu\n\nHTML Kodu:\n<input type=\"text\" id=\"task-input\" placeholder=\"Yeni görev...\">\n<input type=\"date\" id=\"task-date\">\n<select id=\"task-priority\">\n  <option value=\"low\">Düşük</option>\n  <option value=\"medium\">Orta</option>\n  <option value=\"high\">Yüksek</option>\n</select>\n<button id=\"add-btn\">Ekle</button>",
+            "commonMistakes": [
+              "type=\"date\" yerine type=\"Date\" yazmak - Küçük harf olmalı",
+              "<select> etiketini kapatmayı unutmak - </select> gerekli",
+              "option'larda value yazmayı unutmak - JavaScript'te value kullanılır",
+              "id'leri benzersiz yapmamak - Her id farklı olmalı",
+              "placeholder'ı select'e eklemek - Select'te placeholder olmaz, ilk option kullan"
+            ],
+            "validationQuestions": [
+              {
+                "question": "Tarih seçiciyi tıkladığında ne oldu? Takvim açıldı mı?",
+                "expectedKeywords": "takvim, tarih, açıldı, seçtim",
+                "hint": "type=\"date\" input'u tıkladığında tarayıcı otomatik olarak bir takvim açar. Eğer açılmadıysa, type=\"date\" yazdığından emin ol."
+              },
+              {
+                "question": "Öncelik seçici için hangi HTML etiketini kullandın? Kaç seçenek var?",
+                "expectedKeywords": "select, option, 3, Düşük, Orta, Yüksek",
+                "hint": "<select> etiketi kullanmalıydın. İçinde 3 <option> olmalı: Düşük, Orta, Yüksek."
+              },
+              {
+                "question": "Her input'a neden id verdin? Ne işe yarar?",
+                "expectedKeywords": "id, JavaScript, erişim, benzersiz, seçmek",
+                "hint": "id, JavaScript'te bu elemana erişmek için kullanılır. Örneğin: document.getElementById('task-input') ile input'un değerini alabiliriz."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "module-2",
+      "order": 2,
+      "title": "CSS Tasarımı",
+      "description": "Modern ve kullanışlı bir tasarım oluştur",
+      "xpReward": 100,
+      "estimatedMinutes": 60,
+      "stages": [
+        {
+          "id": "stage-2-1-learn",
+          "order": 5,
+          "type": "learn",
+          "title": "CSS Temelleri",
+          "xpReward": 20,
+          "estimatedMinutes": 15,
+          "content": {
+            "type": "learn",
+            "concept": "CSS (Cascading Style Sheets)",
+            "definition": "CSS, HTML elemanlarının görünümünü (renk, boyut, konum, font) kontrol eden stil dilidir. HTML iskelet, CSS ise giysilerdir.",
+            "whyImportant": "CSS olmadan web sayfaları çok basit ve çirkin görünür. Profesyonel bir uygulama için CSS şarttır. Yapılacaklar uygulamamızı modern, renkli ve kullanıcı dostu yapmak için CSS kullanacağız. İyi tasarım, kullanıcı deneyimini doğrudan etkiler.",
+            "howItWorks": "CSS 3 şekilde eklenebilir:\n\n1. Inline: <div style=\"color: red;\">Metin</div>\n2. Internal: <style> body { color: red; } </style>\n3. External: <link rel=\"stylesheet\" href=\"style.css\">\n\nCSS Sözdizimi:\nseçici {\n  özellik: değer;\n}\n\nÖrnek:\nh1 {\n  color: blue;\n  font-size: 32px;\n  text-align: center;\n}\n\nSeçiciler:\n- Etiket: h1, p, button\n- Class: .task-item\n- ID: #task-list\n- Hepsi: *",
+            "examples": [
+              "body { background-color: #f5f5f5; } /* Arka plan rengi */",
+              "h1 { color: #333; font-size: 28px; } /* Başlık stili */",
+              "button { background: #4CAF50; color: white; } /* Buton stili */",
+              ".task-item { padding: 10px; border: 1px solid #ddd; } /* Class */",
+              "#task-list { list-style: none; } /* ID */"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-2-1-apply",
+          "order": 6,
+          "type": "apply",
+          "title": "Temel Stilleri Ekle",
+          "xpReward": 30,
+          "estimatedMinutes": 25,
+          "content": {
+            "type": "apply",
+            "task": "Uygulamaya temel CSS stilleri ekleyerek modern bir görünüm oluştur",
+            "deliverable": "style.css dosyası ile stillendirilmiş web sayfası",
+            "steps": [
+              "Proje klasöründe 'style.css' adında yeni dosya oluştur",
+              "index.html'de <head> içine <link rel=\"stylesheet\" href=\"style.css\"> ekle",
+              "style.css'de body stilini yaz: font-family, background-color, padding",
+              "h1 için stil ekle: color, text-align, margin",
+              "input ve button için stil ekle: padding, border, border-radius, font-size",
+              "button:hover ekle (fare üzerine gelince renk değişimi)",
+              "Dosyayı kaydet ve tarayıcıda yenile",
+              "Sayfanın renkli ve düzenli göründüğünü kontrol et",
+              "Butonun üzerine fareyi getir - renk değişmeli"
+            ],
+            "tools": [
+              "Kod editörü (VS Code)",
+              "Tarayıcı (Chrome DevTools ile test)",
+              "Renk seçici: colorhunt.co veya coolors.co"
+            ],
+            "exampleOutput": "Sayfa şöyle görünmeli:\n\n- Arka plan: Açık gri (#f5f5f5)\n- Başlık: Koyu gri, ortalanmış, büyük font\n- Input: Beyaz, yuvarlatılmış köşeler, gölge\n- Buton: Yeşil, beyaz yazı, yuvarlatılmış\n- Buton hover: Koyu yeşil\n\nCSS Kodu Örneği:\nbody {\n  font-family: Arial, sans-serif;\n  background-color: #f5f5f5;\n  padding: 20px;\n  max-width: 600px;\n  margin: 0 auto;\n}\n\nh1 {\n  color: #333;\n  text-align: center;\n}\n\ninput {\n  padding: 10px;\n  border: 1px solid #ddd;\n  border-radius: 5px;\n  font-size: 16px;\n  width: 70%;\n}\n\nbutton {\n  padding: 10px 20px;\n  background: #4CAF50;\n  color: white;\n  border: none;\n  border-radius: 5px;\n  cursor: pointer;\n}\n\nbutton:hover {\n  background: #45a049;\n}",
+            "commonMistakes": [
+              "CSS dosyasını HTML'e bağlamayı unutmak - <link> etiketi gerekli",
+              "Noktalı virgül (;) koymayı unutmak - Her özellik ; ile bitmeli",
+              "Renk kodunu # ile yazmayı unutmak - #333 doğru, 333 yanlış",
+              "Class için . koymayı unutmak - .task-item doğru, task-item yanlış",
+              "Yazım hatası - background-color doğru, background-colour yanlış (İngilizce)"
+            ],
+            "validationQuestions": [
+              {
+                "question": "CSS dosyasını HTML'e nasıl bağladın? Hangi etiketi kullandın?",
+                "expectedKeywords": "link, rel, stylesheet, href, style.css",
+                "hint": "<link rel=\"stylesheet\" href=\"style.css\"> etiketini <head> içine eklemen gerekiyordu."
+              },
+              {
+                "question": "Butonun üzerine fareyi getirdiğinde ne oldu? Hangi CSS özelliğini kullandın?",
+                "expectedKeywords": "hover, renk değişti, koyu, background",
+                "hint": "button:hover { background: #45a049; } kullanarak fare üzerine gelince buton renginin değişmesini sağladın."
+              },
+              {
+                "question": "Sayfanın arka plan rengini nasıl değiştirdin? Hangi renk kodunu kullandın?",
+                "expectedKeywords": "body, background-color, #f5f5f5, gri",
+                "hint": "body { background-color: #f5f5f5; } ile arka planı açık gri yaptın. # işareti renk kodu için gerekli."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "totalXP": 180,
+  "estimatedHours": 2,
+  "difficulty": "Çırak",
+  "learningOutcomes": [
+    "HTML doküman yapısını anlama",
+    "Form elemanlarını kullanabilme",
+    "CSS ile stil ekleme",
+    "Modern web tasarımı yapabilme"
+  ],
+  "toolsUsed": [
+    "HTML5",
+    "CSS3",
+    "VS Code veya metin editörü",
+    "Web tarayıcısı (Chrome/Firefox)"
+  ]
+}

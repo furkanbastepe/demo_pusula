@@ -1,0 +1,28 @@
+{
+  "id": "prob_health_005",
+  "title": "Sağlık Ocağı Randevu ve Takip Sistemi",
+  "description": "Konya'daki sağlık ocaklarında randevu alma ve hasta takip süreçlerini dijitalleştirmek istiyoruz. Sistem, hastaların online randevu alabilmesini, reçete ve tahlil sonuçlarını görüntüleyebilmesini, aşı takvimleri ve hatırlatmalar alabilmesini sağlamalı. Ayrıca sağlık personeli için hasta geçmişi, ilaç etkileşimleri ve acil durum bilgilerine hızlı erişim imkanı sunmalıdır. Özellikle kırsal bölgelerdeki sağlık ocakları için mobil erişim kritik önem taşıyor.",
+  "organization": "Konya İl Sağlık Müdürlüğü",
+  "organizationId": "org_konya_health_001",
+  "impactArea": "healthcare",
+  "city": "konya",
+  "requiredSkills": ["Yazılım Geliştirici", "Veri Güvenliği", "Mobil Uygulama"],
+  "status": "open",
+  "urgencyLevel": 4,
+  "impactScore": 90,
+  "submittedAt": "2025-01-12T08:45:00Z",
+  "deadline": "2025-05-15T23:59:59Z",
+  "attachments": [],
+  "constraints": {
+    "budget": "Kamu sağlık bütçesi",
+    "timeline": "4 ay içinde pilot uygulama",
+    "technical": "KVKK uyumlu, güvenli veri saklama, e-nabız entegrasyonu"
+  },
+  "engagement": {
+    "views": 278,
+    "saves": 42,
+    "workshopApplications": 19,
+    "activeWorkshops": 2,
+    "submittedSolutions": 0
+  }
+}

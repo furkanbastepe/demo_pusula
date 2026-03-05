@@ -1,0 +1,203 @@
+{
+  "id": "digital-designer-menu",
+  "title": "Kafe Menü Tasarımı",
+  "skillPath": "Dijital Tasarımcı",
+  "emoji": "🎨",
+  "context": {
+    "companyName": "Kahve Diyarı Cafe",
+    "companyType": "Butik Kafe",
+    "industry": "Yiyecek & İçecek",
+    "projectGoal": "Modern, çekici ve okunabilir bir kafe menüsü tasarlamak",
+    "targetAudience": "Kafe müşterileri (18-45 yaş)",
+    "scenario": "Kahve Diyarı, yeni açılan bir butik kafe. Sahibi, müşterilerin kolayca okuyabileceği, markanın ruhunu yansıtan ve Instagram'da paylaşılabilir bir menü istiyor. Sen Canva veya Adobe Illustrator kullanarak A4 boyutunda bir menü tasarlayacaksın.",
+    "deliverables": [
+      "Marka renk paleti",
+      "Menü layout tasarımı",
+      "Tipografi seçimi",
+      "Baskıya hazır PDF dosyası"
+    ]
+  },
+  "modules": [
+    {
+      "id": "module-1",
+      "order": 1,
+      "title": "Marka Analizi",
+      "description": "Kafe markasını tanı ve tasarım yönünü belirle",
+      "xpReward": 50,
+      "estimatedMinutes": 35,
+      "stages": [
+        {
+          "id": "stage-1-1-learn",
+          "order": 1,
+          "type": "learn",
+          "title": "Marka Kimliği Nedir?",
+          "xpReward": 10,
+          "estimatedMinutes": 8,
+          "content": {
+            "type": "learn",
+            "concept": "Marka Kimliği ve Görsel Dil",
+            "definition": "Marka kimliği, bir işletmenin görsel ve duygusal karakteridir. Renk paleti, tipografi, logo, ton ve stil gibi öğelerden oluşur. Tutarlı marka kimliği, müşterilerin markayı tanımasını ve hatırlamasını sağlar.",
+            "whyImportant": "İyi tasarım, markanın hikayesini anlatır. Kahve Diyarı için menü tasarlarken, kafeye uygun renk, font ve stil seçmeliyiz. Lüks bir kafe için altın ve siyah, genç ve dinamik bir kafe için canlı renkler kullanırız. Marka kimliği, tasarım kararlarımızın temelidir.",
+            "howItWorks": "Marka analizi 4 adımda yapılır:\n\n1. Marka Değerleri: Ne için var? (kalite, hız, lezzet?)\n2. Hedef Kitle: Kim gelir? (öğrenciler, profesyoneller?)\n3. Rakip Analizi: Diğer kafeler nasıl?\n4. Görsel Yön: Hangi stil? (minimal, vintage, modern?)\n\nÖrnek:\nKahve Diyarı = Sıcak, samimi, doğal\nRenkler: Kahverengi, krem, yeşil\nFont: El yazısı + modern sans-serif\nStil: Rustik ama modern",
+            "examples": [
+              "Lüks Kafe: Siyah, altın, serif font, minimal",
+              "Genç Kafe: Canlı renkler, bold font, playful",
+              "Organik Kafe: Yeşil, kahverengi, doğal font, rustik",
+              "Modern Kafe: Gri, beyaz, sans-serif, clean"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-1-1-apply",
+          "order": 2,
+          "type": "apply",
+          "title": "Marka Analizi ve Renk Paleti Oluştur",
+          "xpReward": 18,
+          "estimatedMinutes": 15,
+          "content": {
+            "type": "apply",
+            "task": "Kahve Diyarı için marka analizi yap ve 5 renkli palet oluştur",
+            "deliverable": "Marka analiz dokümanı ve renk paleti",
+            "steps": [
+              "Yeni bir doküman aç (Word/Google Docs)",
+              "Başlık: 'Kahve Diyarı - Marka Analizi'",
+              "Marka değerlerini yaz: Sıcak, samimi, kaliteli, doğal",
+              "Hedef kitleyi tanımla: 18-45 yaş, kahve severler, sosyal medya kullanıcıları",
+              "Rakip kafeleri araştır: 2-3 kafe örneği bul ve stillerini not et",
+              "Görsel yönü belirle: Rustik ama modern, sıcak ve davetkar",
+              "Coolors.co veya Adobe Color'a git",
+              "5 renkli palet oluştur: Ana renk (kahverengi), ikincil (krem), vurgu (yeşil), nötr (beyaz, siyah)",
+              "Renk kodlarını kaydet (HEX: #8B4513)",
+              "Palet görselini indir ve dokümana ekle"
+            ],
+            "tools": [
+              "Coolors.co - Renk paleti oluşturucu",
+              "Adobe Color - Profesyonel renk aracı",
+              "Pinterest - İlham için kafe menü örnekleri",
+              "Word/Google Docs"
+            ],
+            "exampleOutput": "Marka Analizi:\n\nDeğerler: Sıcak, samimi, kaliteli, doğal\nHedef Kitle: 18-45 yaş, kahve severler, Instagram kullanıcıları\nRakipler: Starbucks (kurumsal), Kronotrop (modern), Petra (rustik)\nGörsel Yön: Rustik modern - doğal ama şık\n\nRenk Paleti:\n1. Ana Renk: Kahverengi (#8B4513) - Kahve, sıcaklık\n2. İkincil: Krem (#F5E6D3) - Süt, yumuşaklık\n3. Vurgu: Yeşil (#6B8E23) - Doğal, taze\n4. Nötr 1: Beyaz (#FFFFFF) - Temizlik\n5. Nötr 2: Koyu Gri (#333333) - Metin",
+            "commonMistakes": [
+              "Çok fazla renk kullanmak - 5 renk yeterli",
+              "Kontrast düşünmemek - Metin okunabilir olmalı",
+              "Marka değerlerine uymayan renkler - Kahve diyarı için neon pembe yanlış",
+              "Rakip analizi yapmamak - Diğer kafeler ne yapıyor?",
+              "HEX kodlarını kaydetmemek - Tasarımda kullanacaksın"
+            ],
+            "validationQuestions": [
+              {
+                "question": "Kahve Diyarı için hangi renk paletini seçtin? Neden bu renkler?",
+                "expectedKeywords": "kahverengi, krem, yeşil, sıcak, doğal",
+                "hint": "Kahverengi (kahve), krem (süt), yeşil (doğal) gibi sıcak ve doğal renkler seçmelisin. Bu renkler kafe markasına uygun."
+              },
+              {
+                "question": "Hedef kitle kimler? Tasarım kararlarını nasıl etkiler?",
+                "expectedKeywords": "18-45, kahve sever, Instagram, modern, okunabilir",
+                "hint": "18-45 yaş, sosyal medya kullanıcıları. Bu yüzden tasarım modern, Instagram'da paylaşılabilir ve okunabilir olmalı."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "module-2",
+      "order": 2,
+      "title": "Layout Tasarımı",
+      "description": "Menü düzenini oluştur ve içeriği yerleştir",
+      "xpReward": 70,
+      "estimatedMinutes": 50,
+      "stages": [
+        {
+          "id": "stage-2-1-learn",
+          "order": 3,
+          "type": "learn",
+          "title": "Layout ve Grid Sistemi",
+          "xpReward": 15,
+          "estimatedMinutes": 12,
+          "content": {
+            "type": "learn",
+            "concept": "Tasarım Layout'u ve Grid",
+            "definition": "Layout, tasarımdaki öğelerin düzeni ve yerleşimidir. Grid sistemi, içeriği düzenli ve okunabilir şekilde yerleştirmek için kullanılan görünmez çizgilerdir.",
+            "whyImportant": "İyi layout, bilgiyi hiyerarşik ve okunabilir şekilde sunar. Menüde, içecekler kategorilere ayrılmalı, fiyatlar net görünmeli, görseller dengeli yerleştirilmeli. Grid sistemi, profesyonel ve düzenli tasarım yapmanızı sağlar.",
+            "howItWorks": "Layout Prensipleri:\n\n1. Hiyerarşi: Önemli bilgi büyük (başlık > kategori > ürün)\n2. Boşluk: Nefes alan tasarım (padding, margin)\n3. Hizalama: Düzenli görünüm (sola, ortaya, sağa)\n4. Tekrar: Tutarlı stil (aynı font, aynı spacing)\n5. Kontrast: Dikkat çekme (koyu-açık, büyük-küçük)\n\nGrid Sistemi:\n- 2 sütun: İçecekler | Yiyecekler\n- 3 sütun: Kahveler | Çaylar | Tatlılar\n- Margin: Sayfa kenarlarından 2cm boşluk",
+            "examples": [
+              "Başlık: 32pt, bold, ortalanmış",
+              "Kategori: 18pt, bold, sola hizalı",
+              "Ürün adı: 14pt, regular, sola hizalı",
+              "Fiyat: 14pt, bold, sağa hizalı",
+              "Açıklama: 10pt, italic, sola hizalı"
+            ],
+            "visualAid": null
+          }
+        },
+        {
+          "id": "stage-2-1-apply",
+          "order": 4,
+          "type": "apply",
+          "title": "Menü Layout'unu Oluştur",
+          "xpReward": 25,
+          "estimatedMinutes": 25,
+          "content": {
+            "type": "apply",
+            "task": "Canva'da A4 boyutunda menü layout'u tasarla",
+            "deliverable": "Canva'da tasarlanmış menü layout'u",
+            "steps": [
+              "Canva.com'a git ve ücretsiz hesap oluştur",
+              "Yeni tasarım oluştur: A4 Doküman (21x29.7cm)",
+              "Arka plan rengini ayarla: Krem (#F5E6D3)",
+              "Üst kısma başlık ekle: 'Kahve Diyarı' (32pt, kahverengi)",
+              "2 sütun oluştur: Sol = Sıcak İçecekler, Sağ = Soğuk İçecekler",
+              "Her sütunda 3 kategori ekle: Kahveler, Çaylar, Özel İçecekler",
+              "Her kategoride 3-4 ürün ekle: Ürün adı + Fiyat",
+              "Alt kısma logo veya slogan ekle: 'Her yudum bir hikaye'",
+              "Margin'leri ayarla: Her kenardan 2cm boşluk",
+              "Tasarımı kaydet: 'kahve-diyari-menu-v1'"
+            ],
+            "tools": [
+              "Canva.com - Ücretsiz tasarım aracı",
+              "Adobe Illustrator - Profesyonel (opsiyonel)",
+              "Google Fonts - Font araştırması"
+            ],
+            "exampleOutput": "Menü yapısı:\n\n[Başlık: Kahve Diyarı]\n\n[Sol Sütun: Sıcak İçecekler]\nKahveler:\n- Espresso .............. 25₺\n- Americano ............ 30₺\n- Cappuccino ........... 35₺\n- Latte ................. 35₺\n\nÇaylar:\n- Siyah Çay ............ 15₺\n- Yeşil Çay ............ 20₺\n- Bitki Çayı ........... 20₺\n\n[Sağ Sütun: Soğuk İçecekler]\nBuz Kahveler:\n- Iced Latte ........... 40₺\n- Cold Brew ............ 45₺\n- Frappuccino .......... 50₺\n\n[Alt: Her yudum bir hikaye ☕]",
+            "commonMistakes": [
+              "Çok fazla bilgi sıkıştırmak - Boşluk bırak",
+              "Okunmayan fontlar - En az 12pt kullan",
+              "Fiyatları gizlemek - Net ve görünür olmalı",
+              "Hizalama hatası - Tüm ürünler aynı hizada",
+              "Margin unutmak - Kenarlardan 2cm boşluk bırak"
+            ],
+            "validationQuestions": [
+              {
+                "question": "Menüde kaç sütun kullandın? Neden bu düzeni seçtin?",
+                "expectedKeywords": "2, sütun, sıcak, soğuk, düzenli",
+                "hint": "2 sütun kullanmalıydın: Sol = Sıcak İçecekler, Sağ = Soğuk İçecekler. Bu düzen okunabilir ve dengeli."
+              },
+              {
+                "question": "Başlık fontunu kaç punto yaptın? Neden?",
+                "expectedKeywords": "32, 36, büyük, dikkat, başlık",
+                "hint": "Başlık 32-36pt olmalı. Büyük font dikkat çeker ve hiyerarşi oluşturur. Ürün adları daha küçük (14pt)."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "totalXP": 120,
+  "estimatedHours": 1.5,
+  "difficulty": "Çırak",
+  "learningOutcomes": [
+    "Marka analizi yapabilme",
+    "Renk paleti oluşturabilme",
+    "Layout tasarlayabilme",
+    "Canva kullanabilme"
+  ],
+  "toolsUsed": [
+    "Canva",
+    "Coolors.co",
+    "Adobe Color",
+    "Pinterest (ilham için)"
+  ]
+}
